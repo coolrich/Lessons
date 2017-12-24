@@ -1,4 +1,4 @@
-package com.company;
+package lesson6.exercise15;
 
 import java.util.Arrays;
 
