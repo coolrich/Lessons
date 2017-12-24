@@ -160,6 +160,7 @@ public class Convertion {
         byte b = (byte) d;
     }
 
+
     public static void main(String[] args) {
         byte b = 0;
         short s = 1;
