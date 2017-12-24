@@ -6,6 +6,10 @@
           <option name="url" value="https://github.com/milkina/flow-control.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/coolrich/Lessons.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="D:\programming\java\Java Projects\UIS\Git" />
