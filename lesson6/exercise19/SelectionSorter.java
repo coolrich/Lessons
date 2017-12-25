@@ -1,7 +1,7 @@
 package lesson6.exercise19;
 
 import java.util.Arrays;
-
+///////////////////////////
 public class SelectionSorter {
     public static void sort(int[] array) {
         boolean b = false;
