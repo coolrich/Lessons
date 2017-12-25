@@ -1,4 +1,4 @@
-package lesson5.Exercise5;
+package lesson5.exercise5;
 
 /**
  * Created by student on 17.12.2017.
