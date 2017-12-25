@@ -3,46 +3,38 @@ package lesson3.exercise3;
 import java.util.Scanner;
 
 public class Summ {
+
     public static int sum(int a, int b) {
         return a + b;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String query1 = "Enter the first integer:";
+        String query2 = "Enter the second integer:";
+        String sumOfInts = "the sum of the integers is ";
         while (true) {
-            int a;
-            int b;
-            boolean isWrong = false;
-            String error = "Error, please enter the integer";
-            String query1 = "Enter the first integer:";
-            String query2 = "Enter the second integer:";
-            String sumOfInts = "the sum of the integers is ";
             System.out.println(query1);
-            while (true) {
-                sc = checkInput(sc, isWrong, error, query2, sumOfInts);
-            }
+            int a = checkInput(sc);
+            System.out.println(query2);
+            int b = checkInput(sc);
+            System.out.println(sumOfInts + sum(a, b));
         }
     }
 
-    private static Scanner checkInput(Scanner sc, boolean isWrong, String error, String query2, String sumOfInts) {
-        int a;
-        int b;
-        if (sc.hasNextInt()) {
-            a = sc.nextInt();
-            System.out.println(query2);
-            if (sc.hasNextInt()) {
-                b = sc.nextInt();
-                System.out.println(sumOfInts + sum(a, b));
-            } else {
-                isWrong = true;
+    public static int checkInput(Scanner sc) {
+        int intVal = 0;
+        boolean b;
+         do {
+            if (b= sc.hasNextInt()) {
+                intVal = sc.nextInt();
+            }else {
+                System.out.print("Press enter and input right value, please!");
+             sc.next();
             }
-        } else {
-            isWrong = true;
-        }
-        if (isWrong) {
-            System.out.println(error);
-            sc = new Scanner(System.in);
-        }
-        return sc;
+
+        }while (!b);
+
+        return intVal;
     }
 }
