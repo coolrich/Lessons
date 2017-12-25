@@ -2,7 +2,6 @@ package lesson6.exercise17;
 
 public class BinaryLightBulbs {
     public static void blink(int[] lightBulbs, int count) {
-
         for (int i = 0; i < count; i++) {
             for (int j = 0; j < lightBulbs.length; j++) {
                 lightBulbs[j] = lightBulbs[j] == 0 ? 1 : 0;
@@ -21,13 +20,10 @@ public class BinaryLightBulbs {
                     System.arraycopy(lightBulbs, lightBulbs.length - i, lightBulbs, lightBulbs.length - i - 1, 1);
                 }
                 formattedStatusPrint(lightBulbs);
-
             }
         } else {
             System.out.println("The number of cycles can not be less than one!");
         }
-
-
     }
 
     public static boolean isFirstOn(int[] lightBulbs) {
@@ -50,7 +46,6 @@ public class BinaryLightBulbs {
     public static void main(String[] args) {
         int[] lightBulbs = new int[32];
         init(lightBulbs);
-
         String choice = args[0];
 
         switch (choice) {

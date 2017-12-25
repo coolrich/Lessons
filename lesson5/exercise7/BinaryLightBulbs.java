@@ -1,9 +1,7 @@
 package lesson5.exercise7;
 
-
 public class BinaryLightBulbs {
     public static void blink(int lightBulbs, int count) {
-
         for (int i = 0; i < count; i++) {
             lightBulbs = ~lightBulbs;
             formattedStatusPrint(lightBulbs);
@@ -11,12 +9,10 @@ public class BinaryLightBulbs {
     }
 
     public static void turnOnTickerMode(int lightBulbs, boolean toRight, int shift) {
-
         for (int i = 0; i < 32; i++) {
             formattedStatusPrint(lightBulbs);
             if (toRight) {
                 lightBulbs = lightBulbs >>> shift;
-
             } else {
                 lightBulbs = lightBulbs << shift;
             }
@@ -28,7 +24,6 @@ public class BinaryLightBulbs {
     }
 
     public static void formattedStatusPrint(int lightBulbs) {
-
         String s = Integer.toBinaryString(lightBulbs);
         String initial = new String(s);
         for (int i = 0; i < 32 - initial.length(); i++) {
