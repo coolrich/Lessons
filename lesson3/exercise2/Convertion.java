@@ -15,13 +15,16 @@ public class Convertion {
     }
 
     public static void byteTofloat(byte b) {
-         float f = b;
+        float f = b;
     }
 
     public static void byteToDouble(byte b) {
         double d = b;
     }
 
+    public static void byteToChar(byte b) {
+        char c = (char) b;
+    }
 
     public static void shortToInt(short s) {
         int i = s;
@@ -39,6 +42,9 @@ public class Convertion {
         double d = s;
     }
 
+    public static void shortToChar(short s) {
+        char c = (char) s;
+    }
 
     public static void intToLong(int i) {
         long l = i;
@@ -51,7 +57,6 @@ public class Convertion {
     public static void intToDouble(int i) {
         double d = i;
     }
-
 
     public static void charToInt(char c) {
         int i = c;
@@ -69,7 +74,6 @@ public class Convertion {
         double d = c;
     }
 
-
     public static void longToFloat(long l) {
         float f = l;
     }
@@ -78,16 +82,13 @@ public class Convertion {
         double d = l;
     }
 
-
     public static void floatToDouble(float f) {
         double d = f;
     }
 
-
     public static void shortToByte(short s) {
         byte b = (byte) s;
     }
-
 
     public static void intToByte(int i) {
         byte b = (byte) i;
@@ -100,7 +101,6 @@ public class Convertion {
     public static void intToChar(int i) {
         char c = (char) i;
     }
-
 
     public static void floatToInt(float f) {
         int i = (int) f;
@@ -118,6 +118,9 @@ public class Convertion {
         byte b = (byte) f;
     }
 
+    private static void floatToLong(float f) {
+        long l = (long) f;
+    }
 
     public static void longToInt(long l) {
         int i = (int) l;
@@ -134,7 +137,6 @@ public class Convertion {
     public static void longToByte(long l) {
         byte b = (byte) l;
     }
-
 
     public static void doubleToFloat(float f) {
         double d = (double) f;
@@ -180,17 +182,29 @@ public class Convertion {
         longToShort(l);
         longToChar(l);
         longToInt(l);
+        longToFloat(l);
+        longToDouble(l);
 
         floatToByte(f);
         floatToShort(f);
         floatToChar(f);
         floatToInt(f);
+        floatToDouble(f);
+        floatToLong(f);
 
         intToChar(i);
         intToShort(i);
         intToByte(i);
+        intToDouble(i);
+        intTofloat(i);
+        intToLong(i);
 
         shortToByte(s);
+        shortToInt(s);
+        shortToChar(s);
+        shortToDouble(s);
+        shortToLong(s);
+        shortToFloat(s);
 
         floatToDouble(f);
 
@@ -210,11 +224,13 @@ public class Convertion {
         shortToFloat(s);
         shortToLong(s);
         shortToInt(s);
+        shortToChar(s);
 
         byteToDouble(b);
         byteTofloat(b);
         byteToLong(b);
         byteToInt(b);
         byteToShort(b);
+        byteToChar(b);
     }
 }
