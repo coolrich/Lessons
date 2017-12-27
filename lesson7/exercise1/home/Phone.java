@@ -1,4 +1,4 @@
-package lesson7.exercise1;
+package lesson7.exercise1.home;
 
 public class Phone {
     public String number;
