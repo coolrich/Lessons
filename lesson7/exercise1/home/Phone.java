@@ -31,6 +31,13 @@ public class Phone {
         return number;
     }
 
+    public void sendMessage(String...phoneNumbers){
+        for (String name:
+             phoneNumbers) {
+            System.out.println("Message has been sent to "+name);
+
+        }
+    }
     public void receiveCall(String callerName) {
         System.out.println(callerName + " is calling");
     }
@@ -60,5 +67,6 @@ class PhoneDemo {
             p.receiveCall("Someone","0964568987");
             System.out.println("\n");
         }
+        all[0].sendMessage("0964848488","0964521321","0964562121");
     }
 }
