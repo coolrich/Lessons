@@ -1,4 +1,4 @@
-package lesson7.exercise1.home;
+package lesson7.exercise1;
 
 public class Phone {
     private String number;
@@ -48,7 +48,7 @@ public class Phone {
 
 }
 
-class PhoneDemo {
+class honeDemo {
 
     public static void main(String[] args) {
         Phone p1 = new Phone();

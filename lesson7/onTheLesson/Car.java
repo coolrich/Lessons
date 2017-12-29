@@ -1,4 +1,4 @@
-package lesson7.exercise1.classes;
+package lesson7.onTheLesson;
 
 /**
  * Created by student on 27.12.2017.
