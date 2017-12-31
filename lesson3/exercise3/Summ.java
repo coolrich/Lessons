@@ -25,15 +25,15 @@ public class Summ {
     public static int checkInput(Scanner sc) {
         int intVal = 0;
         boolean b;
-         do {
-            if (b= sc.hasNextInt()) {
+        do {
+            if (b = sc.hasNextInt()) {
                 intVal = sc.nextInt();
-            }else {
+            } else {
                 System.out.print("Press enter and input right value, please!");
-             sc.next();
+                sc.next();
             }
 
-        }while (!b);
+        } while (!b);
 
         return intVal;
     }
