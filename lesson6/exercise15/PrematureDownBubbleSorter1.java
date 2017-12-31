@@ -3,11 +3,6 @@ package lesson6.exercise15;
 import java.util.Arrays;
 
 public class PrematureDownBubbleSorter1 {
-    /**
-     * Метод для сортировки массива целых чисел
-     *
-     * @param array
-     */
     public static void sort(int[] array) {
 
         boolean b = true;
@@ -30,11 +25,6 @@ public class PrematureDownBubbleSorter1 {
 
     }
 
-    /**
-     * Сортировка без преждевременного завершения
-     *
-     * @param array
-     */
     public static void simpleBubbleSort(int[] array) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
@@ -51,7 +41,6 @@ public class PrematureDownBubbleSorter1 {
     }
 
     public static void main(String[] args) {
-//        int[] m = {8, 7, 3, 4, 5, 6, 7};
         int[] m = {5, 0, 4, 1, 4, 2, 3};
         int[] m1 = m.clone();
         sort(m);
@@ -61,4 +50,3 @@ public class PrematureDownBubbleSorter1 {
 
     }
 }
-
