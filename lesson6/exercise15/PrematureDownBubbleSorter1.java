@@ -10,31 +10,29 @@ public class PrematureDownBubbleSorter1 {
      */
     public static void sort(int[] array) {
 
-        boolean b=true;
+        boolean b = true;
         for (int i = 0; i < array.length; i++) {
-            inner:
+
             for (int j = array.length - 1; j > i; j--) {
                 if (array[j - 1] < array[j]) {
                     int tmp = array[j - 1];
                     array[j - 1] = array[j];
                     array[j] = tmp;
-                    b=false;
+                    b = false;
                 }
-
-                if(b==true){
-                    break inner;
+                if (b) {
+                    break;
                 }
-                b=true;
+                b = true;
             }
 
         }
 
     }
 
-
-
     /**
      * Сортировка без преждевременного завершения
+     *
      * @param array
      */
     public static void simpleBubbleSort(int[] array) {
