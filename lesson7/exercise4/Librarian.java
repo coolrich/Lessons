@@ -11,9 +11,9 @@ public class Librarian {
 
     }
 
-    public Librarian(User[] users,Book[] books) {
+    public Librarian(User[] users, Book[] books) {
         this.users = users;
-        this.books=books;
+        this.books = books;
     }
 
     public User[] getUsers() {
@@ -67,29 +67,29 @@ public class Librarian {
     }
 
     public void toManageUsers(int numOfTicket, Scanner sc) {
-        if(users.length==0){
+        if (users.length == 0) {
             System.out.println("No users");
         }
-        if(numOfTicket-1 < users.length){
-        System.out.println("Select item\n" +
-                "1. Add a book\n" +
-                "2. Pick up a book\n" +
-                "Write your choice, please(1-3):" );
-        sc.nextLine();
-        switch (sc.nextLine()) {
-            case "1":
-                System.out.println("What kind of book do you want?");
-                users[numOfTicket-1].takeBook(sc.nextLine());
-                break;
-            case "2":
-                System.out.println("What book do you want to return?");
-                users[numOfTicket-1].returnBook(sc.nextLine());
-                break;
-            default:
-                break;
-        }
-        }else{
-            System.out.println("User with ticket number "+numOfTicket+" does not exist");
+        if (numOfTicket - 1 < users.length) {
+            System.out.println("Select item\n" +
+                    "1. Add a book\n" +
+                    "2. Pick up a book\n" +
+                    "Write your choice, please(1-3):");
+            sc.nextLine();
+            switch (sc.nextLine()) {
+                case "1":
+                    System.out.println("What kind of book do you want?");
+                    users[numOfTicket - 1].takeBook(sc.nextLine());
+                    break;
+                case "2":
+                    System.out.println("What book do you want to return?");
+                    users[numOfTicket - 1].returnBook(sc.nextLine());
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            System.out.println("User with ticket number " + numOfTicket + " does not exist");
         }
     }
 
@@ -128,7 +128,7 @@ public class Librarian {
                     break;
                 case "3":
                     System.out.println("Write the number of ticket");
-                    l.toManageUsers(checkForInt(sc),sc);
+                    l.toManageUsers(checkForInt(sc), sc);
                     break;
                 case "4":
                     isContinue = false;
