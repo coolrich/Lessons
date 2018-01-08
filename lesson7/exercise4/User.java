@@ -41,16 +41,9 @@ public class User {
         return patronymic;
     }
 
-    public void setPatronymic(String patronymic) {
-        this.patronymic = patronymic;
-    }
 
     public int getNumOfReadTicket() {
         return numOfReadTicket;
-    }
-
-    public void setNumOfReadTicket(int numOfReadTicket) {
-        this.numOfReadTicket = numOfReadTicket;
     }
 
     public static void setNumOfTickets(int numOfTickets) {
@@ -114,7 +107,5 @@ public class User {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
+
 }
