@@ -38,8 +38,8 @@ class Aspirant extends Student {
 public class Inheritance {
     public static void main(String[] args) {
         System.out.println(new Student("Someone", "TL-11").getName());
-        System.out.println(new Aspirant("SomeoneElse", "TP-11", "Ion implantation of Nitrides").getName());
-        Student s = new Aspirant("SomeoneElse", "TP-11", "Ion implantation of Nitrides");
+        System.out.println(new Aspirant("SomeoneElse", "TP-11", "Ion implantation").getName());
+        Student s = new Aspirant("SomeoneElse", "TP-11", "Ion implantation");
         System.out.println(s.getName());
 
     }
