@@ -7,10 +7,12 @@ class Student {
     private String name;
 
     private String group;
-    public Student(String n, String g){
-        name=n;
-        group=g;
+
+    public Student(String n, String g) {
+        name = n;
+        group = g;
     }
+
     public String getName() {
         return name;
     }
@@ -19,22 +21,25 @@ class Student {
         return group;
     }
 }
-class Aspirant extends Student{
+
+class Aspirant extends Student {
     private String scientificWork;
-    public Aspirant(String n,String g,String sw){
-        super(n,g);
-        scientificWork=sw;
+
+    public Aspirant(String n, String g, String sw) {
+        super(n, g);
+        scientificWork = sw;
     }
 
     public String getScientificWork() {
         return scientificWork;
     }
 }
-public class Inheritance{
+
+public class Inheritance {
     public static void main(String[] args) {
-        System.out.println(new Student("Someone","TL-11").getName());
-        System.out.println(new Aspirant("SomeoneElse","TP-11","Ion implantation of Nitrides").getName());
-        Student s = new Aspirant("SomeoneElse","TP-11","Ion implantation of Nitrides");
+        System.out.println(new Student("Someone", "TL-11").getName());
+        System.out.println(new Aspirant("SomeoneElse", "TP-11", "Ion implantation of Nitrides").getName());
+        Student s = new Aspirant("SomeoneElse", "TP-11", "Ion implantation of Nitrides");
         System.out.println(s.getName());
 
     }
