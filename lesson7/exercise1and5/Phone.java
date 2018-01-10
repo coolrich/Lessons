@@ -4,19 +4,34 @@ public class Phone {
     private String number;
     private String model;
     private float weight;
+    private static int count=0;
 
     public Phone() {
-
+    count++;
     }
 
     public Phone(String number, String model, float weight) {
         this(number, model);
         this.weight = weight;
+
     }
 
     public Phone(String number, String model) {
         this.number = number;
         this.model = model;
+        count++;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
     public String getModel() {
@@ -46,27 +61,34 @@ public class Phone {
         System.out.println(callerName + " is calling\n" +callerNumber);
     }
 
+    public static int getCount() {
+        return count;
+    }
+
+    @Override
+    protected void finalize(){
+        System.out.println("The phone "+ getNumber()+"is deleted. " + "There are "+ getCount());
+    }
 }
 
 class PhoneDemo {
 
     public static void main(String[] args) {
-        Phone p1 = new Phone();
-        Phone p2 = new Phone("0985462133", "AA");
-        Phone p3 = new Phone("0968524147", "A", 12);
 
         Phone[] all = new Phone[3];
-        all[0] = p1;
-        all[1] = p2;
-        all[2] = p3;
+
+        all[0] = new Phone();
+        all[1] = new Phone("0985462133", "AA");
+        all[2] = new Phone("0968524147", "A", 12);
 
         for (Phone p :
                 all) {
             System.out.println(p.getModel() + " " + p.getNumber() + " " + p.getWeight());
-            p.getNumber();
             p.receiveCall("Someone","0964568987");
             System.out.println("\n");
         }
         all[0].sendMessage("0964848488","0964521321","0964562121");
+        all[0]=all[1]=all[2]=null;
+        System.gc();
     }
 }
