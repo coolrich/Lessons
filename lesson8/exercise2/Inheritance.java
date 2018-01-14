@@ -69,7 +69,6 @@ class Aspirant extends Student {
         this.scientificWork = scientificWork;
     }
 
-
     public int getScholarship() {
         return getAverageMark() >= 5 ? 200 : 180;
     }

@@ -67,6 +67,10 @@ public class User {
         }
     }
 
+    /**
+     *
+     * @param name
+     */
     private void deleteBook(String name) {
         int i = 1;
         for (Book b :
