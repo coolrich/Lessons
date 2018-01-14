@@ -39,7 +39,7 @@ public class Librarian {
         String bd = sc.nextLine();
         System.out.println("Write a phone number:");
         String pn = sc.nextLine();
-        User newUser = new User(fn, ln, p, bd, pn,this);
+        User newUser = new User(fn, ln, p, bd, pn, this);
 
         if (users == null) {
             users = new User[1];
@@ -63,14 +63,14 @@ public class Librarian {
                         "\nNumber of reader's ticket " + u.getNumOfReadTicket() +
                         "\nDate of birth " + u.getDateOfBirth() +
                         "\nPhone number " + u.getPhoneNumber()
-                        +"\n");
+                        + "\n");
                 System.out.println("Books:");
-                if(u.getBooks()[0]!=null) {
+                if (u.getBooks()[0] != null) {
                     for (Book b :
                             u.getBooks()) {
                         System.out.println(b.getBookName());
                     }
-                }else{
+                } else {
                     System.out.println("No books");
                 }
                 System.out.println("___________________________________________");
@@ -93,7 +93,7 @@ public class Librarian {
             switch (sc.nextLine()) {
                 case "1":
                     System.out.println("What kind of book do you want?");
-                    String s=sc.nextLine();
+                    String s = sc.nextLine();
                     users[numOfTicket - 1].takeBook(s);
                     break;
                 case "2":
@@ -117,9 +117,9 @@ public class Librarian {
     }
 
     private Book findBook(Book book) {
-        for (Book b:
+        for (Book b :
                 books) {
-            if(book==b){
+            if (book == b) {
                 return b;
             }
         }
@@ -127,25 +127,25 @@ public class Librarian {
     }
 
     private Book findBook(String name) {
-        for (Book b:
+        for (Book b :
                 books) {
-            if(name.equals(b.getBookName())){
+            if (name.equals(b.getBookName())) {
                 return b;
             }
         }
         return null;
     }
 
-    public Book giveBook(String name){
+    public Book giveBook(String name) {
         return findBook(name);
     }
 
-    public Book getBook(Book book){
+    public Book getBook(Book book) {
         return findBook(book);
     }
 
     public static void main(String[] args) {
-        Librarian l = new Librarian(new Book[]{new Book("adventures of sherlock holmes and doctor watson","arthur conan doyle",325),new Book("adventures of sherlock holmes","arthur conan doyle",400),new Book("adventures of doctor watson","arthur conan doyle",300)});
+        Librarian l = new Librarian(new Book[]{new Book("adventures of sherlock holmes and doctor watson", "arthur conan doyle", 325), new Book("adventures of sherlock holmes", "arthur conan doyle", 400), new Book("adventures of doctor watson", "arthur conan doyle", 300)});
         Scanner sc = new Scanner(System.in);
         boolean isContinue = true;
         while (isContinue) {

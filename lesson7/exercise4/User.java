@@ -22,7 +22,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.librarian = librarian;
         numOfBooks = 0;
-        numOfReadTicket=++numOfTickets;
+        numOfReadTicket = ++numOfTickets;
         books = new Book[1];
     }
 
@@ -72,14 +72,14 @@ public class User {
         for (Book b :
                 books) {
             if ((b.getBookName()).equals(name)) {
-                books[i-1]=null;
-                for (int j=i;j<books.length;j++){
-                    books[j-1]=books[j];
+                books[i - 1] = null;
+                for (int j = i; j < books.length; j++) {
+                    books[j - 1] = books[j];
                 }
-                Book[] temp=books.clone();
+                Book[] temp = books.clone();
                 books = new Book[books.length];
-                for (int k=0;k<books.length;k++){
-                    books[k]=temp[k];
+                for (int k = 0; k < books.length; k++) {
+                    books[k] = temp[k];
                 }
                 break;
             }
@@ -101,13 +101,13 @@ public class User {
     }
 
     private Book findBook(String name) {
-        if(books[0]!=null){
-        for (Book b :
-                books) {
-            if (name.equals(b.getBookName())) {
-                return b;
+        if (books[0] != null) {
+            for (Book b :
+                    books) {
+                if (name.equals(b.getBookName())) {
+                    return b;
+                }
             }
-        }
         }
         return null;
     }
@@ -122,7 +122,7 @@ public class User {
             Book b;
             if ((b = librarian.giveBook(name)) != null) {
                 addBook(b);
-            }else {
+            } else {
                 System.out.println("No books with the same name");
             }
         }
@@ -142,7 +142,7 @@ public class User {
     }
 
     public void returnBook(String... namesOfBooks) {
-        int numOfBooks=0;
+        int numOfBooks = 0;
         for (String name :
                 namesOfBooks) {
             Book b;
@@ -150,14 +150,14 @@ public class User {
                 deleteBook(name);
                 librarian.getBook(b);
                 returnBook(numOfBooks);
-            }else{
+            } else {
                 System.out.println("No books with the same name");
             }
         }
     }
 
     public void returnBook(Book... books) {
-        int numOfBooks=0;
+        int numOfBooks = 0;
         for (Book b :
                 books) {
             if ((b = findBook(b)) != null) {
@@ -168,7 +168,7 @@ public class User {
         }
     }
 
-    public Book[] getBooks(){
+    public Book[] getBooks() {
         return books;
     }
 
