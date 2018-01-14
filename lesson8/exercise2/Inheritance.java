@@ -48,8 +48,8 @@ class Student {
         this.averageMark = averageMark;
     }
 
-    public int getScholarship(){
-        return averageMark>=5?100:80;
+    public int getScholarship() {
+        return averageMark >= 5 ? 100 : 80;
     }
 }
 
@@ -71,16 +71,16 @@ class Aspirant extends Student {
 
 
     public int getScholarship() {
-        return getAverageMark()>=5?200:180;
+        return getAverageMark() >= 5 ? 200 : 180;
     }
 }
 
 public class Inheritance {
     public static void main(String[] args) {
-        Student egor = new Aspirant("Egor","Surkov","TL-11",5,"Theory of all");
-        Student[] stdntArr = {egor,new Aspirant("Adam","Arslanaliev","TL-71",5,"New big bang theory")};
-        for (Student s:
-             stdntArr) {
+        Student egor = new Aspirant("Egor", "Surkov", "TL-11", 5, "Theory of all");
+        Student[] stdntArr = {egor, new Aspirant("Adam", "Arslanaliev", "TL-71", 5, "New big bang theory")};
+        for (Student s :
+                stdntArr) {
             s.getScholarship();
         }
     }

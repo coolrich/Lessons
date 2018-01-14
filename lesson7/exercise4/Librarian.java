@@ -11,6 +11,10 @@ public class Librarian {
 
     }
 
+    public Librarian(Book[] books) {
+        this.books = books;
+    }
+
     public Librarian(User[] users, Book[] books) {
         this.users = users;
         this.books = books;
@@ -35,7 +39,7 @@ public class Librarian {
         String bd = sc.nextLine();
         System.out.println("Write a phone number:");
         String pn = sc.nextLine();
-        User newUser = new User(fn, ln, p, bd, pn);
+        User newUser = new User(fn, ln, p, bd, pn,this);
 
         if (users == null) {
             users = new User[1];
@@ -58,7 +62,17 @@ public class Librarian {
                         "\nPatronymic " + u.getPatronymic() +
                         "\nNumber of reader's ticket " + u.getNumOfReadTicket() +
                         "\nDate of birth " + u.getDateOfBirth() +
-                        "\nPhone number " + u.getPhoneNumber() + "\n");
+                        "\nPhone number " + u.getPhoneNumber()
+                        +"\n");
+                System.out.println("Books:");
+                if(u.getBooks()[0]!=null) {
+                    for (Book b :
+                            u.getBooks()) {
+                        System.out.println(b.getBookName());
+                    }
+                }else{
+                    System.out.println("No books");
+                }
                 System.out.println("___________________________________________");
             }
         } else {
@@ -72,14 +86,15 @@ public class Librarian {
         }
         if (numOfTicket - 1 < users.length) {
             System.out.println("Select item\n" +
-                    "1. Add a book\n" +
-                    "2. Pick up a book\n" +
-                    "Write your choice, please(1-3):");
+                    "1. Give a book\n" +
+                    "2. Return a book\n" +
+                    "Write your choice, please(1-2):");
             sc.nextLine();
             switch (sc.nextLine()) {
                 case "1":
                     System.out.println("What kind of book do you want?");
-                    users[numOfTicket - 1].takeBook(sc.nextLine());
+                    String s=sc.nextLine();
+                    users[numOfTicket - 1].takeBook(s);
                     break;
                 case "2":
                     System.out.println("What book do you want to return?");
@@ -101,8 +116,36 @@ public class Librarian {
 
     }
 
+    private Book findBook(Book book) {
+        for (Book b:
+                books) {
+            if(book==b){
+                return b;
+            }
+        }
+        return null;
+    }
+
+    private Book findBook(String name) {
+        for (Book b:
+                books) {
+            if(name.equals(b.getBookName())){
+                return b;
+            }
+        }
+        return null;
+    }
+
+    public Book giveBook(String name){
+        return findBook(name);
+    }
+
+    public Book getBook(Book book){
+        return findBook(book);
+    }
+
     public static void main(String[] args) {
-        Librarian l = new Librarian();
+        Librarian l = new Librarian(new Book[]{new Book("adventures of sherlock holmes and doctor watson","arthur conan doyle",325),new Book("adventures of sherlock holmes","arthur conan doyle",400),new Book("adventures of doctor watson","arthur conan doyle",300)});
         Scanner sc = new Scanner(System.in);
         boolean isContinue = true;
         while (isContinue) {
