@@ -28,6 +28,11 @@ public class Librarian {
         this.users = users;
     }
 
+    /**
+     * Метод, который добавляет пользователя
+     *
+     * @param sc
+     */
     public void addUser(Scanner sc) {
         System.out.println("Write a first name:");
         String fn = sc.nextLine();
@@ -52,6 +57,9 @@ public class Librarian {
         }
     }
 
+    /**
+     * Показать пользователей библиотеки
+     */
     public void showUsers() {
         if (users != null) {
             System.out.println("___________________________________________");
@@ -80,6 +88,11 @@ public class Librarian {
         }
     }
 
+    /**
+     * Управление пользователями библиотеки
+     * @param numOfTicket
+     * @param sc
+     */
     public void toManageUsers(int numOfTicket, Scanner sc) {
         if (users.length == 0) {
             System.out.println("No users");
@@ -108,6 +121,10 @@ public class Librarian {
         }
     }
 
+    /**
+     * Вспомогательный метод для проверки
+     * на целое число
+     */
     private static int checkForInt(Scanner sc) {
         while (!sc.hasNextInt()) {
             System.out.println("Write the integer, please!");
@@ -116,6 +133,12 @@ public class Librarian {
 
     }
 
+    /**
+     * Вспомогательный метод ищущий книгу в библиотеке
+     * по объекту Book
+     * @param book
+     * @return
+     */
     private Book findBook(Book book) {
         for (Book b :
                 books) {
@@ -126,6 +149,11 @@ public class Librarian {
         return null;
     }
 
+    /**
+     * Вспомогательный метод ищущий книгу по её названию
+     * @param name
+     * @return
+     */
     private Book findBook(String name) {
         for (Book b :
                 books) {
@@ -136,10 +164,20 @@ public class Librarian {
         return null;
     }
 
+    /**
+     * Дать книгу по её названию
+     * @param name
+     * @return
+     */
     public Book giveBook(String name) {
         return findBook(name);
     }
 
+    /**
+     * Заьрать книгу по объекту Book
+     * @param book
+     * @return
+     */
     public Book getBook(Book book) {
         return findBook(book);
     }

@@ -68,6 +68,7 @@ public class User {
     }
 
     /**
+     * Удаляет книгу из коллекции пользователя
      *
      * @param name
      */
@@ -93,6 +94,8 @@ public class User {
 
     /**
      * Метод для поиска книг в коллекции пользователя
+     * параметр которого принимает аргумент типа Book,
+     * который описывает книгу (название, имя автора, кол-во стр)
      */
     private Book findBook(Book book) {
         for (Book b :
@@ -104,11 +107,16 @@ public class User {
         return null;
     }
 
-    private Book findBook(String name) {
+    /**
+     * Метод для поиска книг в коллекции пользователя
+     * параметр которого принимает аргумент типа String
+     * который описывает название книги
+     */
+    private Book findBook(String nameOfBook) {
         if (books[0] != null) {
             for (Book b :
                     books) {
-                if (name.equals(b.getBookName())) {
+                if (nameOfBook.equals(b.getBookName())) {
                     return b;
                 }
             }
@@ -116,9 +124,37 @@ public class User {
         return null;
     }
 
+    /**
+     * Метод который добавляет указанное количество
+     * книг к количеству книг пользователя
+     *
+     * @param numOfBooks
+     */
     private void takeBook(int numOfBooks) {
         numOfBooks += numOfBooks;
     }
+
+    /**
+     * Метод который добавляет
+     * книги по их названиям к коллекции пользователя
+     *
+     * @param books
+     */
+    public void takeBook(Book... books) {
+        for (Book b :
+                books) {
+            if (librarian.getBook(b) != null) {
+                addBook(b);
+            }
+        }
+    }
+
+    /**
+     * Метод который добавляет
+     * книги по их названиям  к коллекции пользователя
+     *
+     * @param namesOfBooks
+     */
 
     public void takeBook(String... namesOfBooks) {
         for (String name :
@@ -132,19 +168,22 @@ public class User {
         }
     }
 
-    public void takeBook(Book... books) {
-        for (Book b :
-                books) {
-            if (librarian.getBook(b) != null) {
-                addBook(b);
-            }
-        }
-    }
-
+    /**
+     * Метод который убирает определённое количество
+     * книг с коллекции книг пользователя(вспомогательный)
+     *
+     * @param numOfBooks
+     */
     private void returnBook(int numOfBooks) {
         numOfBooks -= numOfBooks;
     }
 
+    /**
+     * Метод который убирает
+     * книги по их названиям  с коллекции пользователя
+     *
+     * @param namesOfBooks
+     */
     public void returnBook(String... namesOfBooks) {
         int numOfBooks = 0;
         for (String name :
@@ -160,6 +199,12 @@ public class User {
         }
     }
 
+    /**
+     * Метод который убирает
+     * книги по их названиям  с коллекции пользователя(вспомогательный)
+     *
+     * @param books
+     */
     public void returnBook(Book... books) {
         int numOfBooks = 0;
         for (Book b :
