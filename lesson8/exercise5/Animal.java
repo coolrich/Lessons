@@ -14,13 +14,41 @@ public abstract class Animal {
     private String food;
     private String location;
 
+    public Animal(String food, String location) {
+        this.food = food;
+        this.location = location;
+    }
+
     public abstract void makeNoise();
+
     public abstract void eat();
-    public void sleep(){
+
+    public void sleep() {
         System.out.println("sleeping");
     }
 
-    public static void main(String[] args) {
+    public String getFood() {
+        return food;
+    }
 
+    public void setFood(String food) {
+        this.food = food;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public static void main(String[] args) {
+        Animal[] animals = {new Cat("Cat food", "l1"), new Dog("Dog food", "l2"), new Horse("Horse food", "l3")};
+        Veterinarian veterinarian = new Veterinarian();
+        for (Animal a :
+                animals) {
+            veterinarian.treatAnimal(a);
+        }
     }
 }

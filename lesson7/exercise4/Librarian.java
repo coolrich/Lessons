@@ -90,6 +90,7 @@ public class Librarian {
 
     /**
      * Управление пользователями библиотеки
+     *
      * @param numOfTicket
      * @param sc
      */
@@ -136,6 +137,7 @@ public class Librarian {
     /**
      * Вспомогательный метод ищущий книгу в библиотеке
      * по объекту Book
+     *
      * @param book
      * @return
      */
@@ -151,6 +153,7 @@ public class Librarian {
 
     /**
      * Вспомогательный метод ищущий книгу по её названию
+     *
      * @param name
      * @return
      */
@@ -166,6 +169,7 @@ public class Librarian {
 
     /**
      * Дать книгу по её названию
+     *
      * @param name
      * @return
      */
@@ -175,6 +179,7 @@ public class Librarian {
 
     /**
      * Заьрать книгу по объекту Book
+     *
      * @param book
      * @return
      */
@@ -186,6 +191,7 @@ public class Librarian {
         Librarian l = new Librarian(new Book[]{new Book("adventures of sherlock holmes and doctor watson", "arthur conan doyle", 325), new Book("adventures of sherlock holmes", "arthur conan doyle", 400), new Book("adventures of doctor watson", "arthur conan doyle", 300)});
         Scanner sc = new Scanner(System.in);
         boolean isContinue = true;
+
         while (isContinue) {
             System.out.println("Select item\n" +
                     "1. Add a new user\n" +
