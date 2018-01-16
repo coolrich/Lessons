@@ -145,6 +145,7 @@ public class User {
                 books) {
             if (librarian.getBook(b) != null) {
                 addBook(b);
+                System.out.println("The book" + b.getBookName() + " has been added successfully");
             }
         }
     }
@@ -193,6 +194,8 @@ public class User {
                 deleteBook(name);
                 librarian.getBook(b);
                 returnBook(numOfBooks);
+                System.out.println("The book" + name + " has been returned successfully");
+
             } else {
                 System.out.println("No books with the same name");
             }
@@ -213,6 +216,7 @@ public class User {
                 deleteBook(b.getBookName());
                 librarian.getBook(b);
                 returnBook(numOfBooks);
+                System.out.println("The book" + b.getBookName() + " has been returned successfully");
             }
         }
     }

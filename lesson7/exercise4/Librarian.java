@@ -178,7 +178,7 @@ public class Librarian {
     }
 
     /**
-     * Заьрать книгу по объекту Book
+     * Забрать книгу по объекту Book
      *
      * @param book
      * @return
