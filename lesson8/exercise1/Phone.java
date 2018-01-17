@@ -13,7 +13,6 @@ public class Phone {
     public Phone(String number, String model, float weight) {
         this(number, model);
         this.weight = weight;
-
     }
 
     public Phone(String number, String model) {

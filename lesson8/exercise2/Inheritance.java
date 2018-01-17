@@ -78,8 +78,7 @@ public class Inheritance {
     public static void main(String[] args) {
         Student egor = new Aspirant("Egor", "Surkov", "TL-11", 5, "Theory of all");
         Student[] stdntArr = {egor, new Aspirant("Adam", "Arslanaliev", "TL-71", 5, "New big bang theory")};
-        for (Student s :
-                stdntArr) {
+        for (Student s : stdntArr) {
             s.getScholarship();
         }
     }
