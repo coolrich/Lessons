@@ -64,13 +64,15 @@ public abstract class Flower {
     public static void initRandomFlowers(Flower[][] flowers) {
         for (int i = 0; i < flowers.length; i++) {
             for (int j = 0; j < flowers[i].length; j++) {
-                byte n = (byte) (Math.random() * 4);
+                byte n = (byte) (Math.random() * 5);
                 if (n <= 1) {
                     flowers[i][j] = new Carnation("Ukraine", 365 * 2, 25);
                 } else if (n <= 2) {
                     flowers[i][j] = new Tulip("Ukraine", 450, 50);
                 } else if (n <= 3) {
                     flowers[i][j] = new Rose("Ukraine", 365 * 2, 75, true);
+                } else if (n <= 4) {
+                    flowers[i][j] = new Middledames("Ukraine", 365 * 2, 100);
                 }
             }
         }
@@ -90,12 +92,12 @@ public abstract class Flower {
                                 "\nCost: " + f.getCost());
             }
         }
-        System.out.println("Number of sold flowers " + getCntrOfAllFlwrs());
-        System.out.println("Cost of sold flowers " + getCostOfAllFlwrs());
+        System.out.println("\n\nNumber of sold flowers: " + getCntrOfAllFlwrs());
+        System.out.println("Cost of sold flowers: " + getCostOfAllFlwrs());
     }
 
     public static void main(String[] args) {
-        Flower[][] flowers = new Flower[3][3];
+        Flower[][] flowers = new Flower[3][4];
         initRandomFlowers(flowers);
         printFlowers(flowers);
     }

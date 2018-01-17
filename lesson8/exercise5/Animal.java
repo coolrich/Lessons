@@ -46,8 +46,7 @@ public abstract class Animal {
     public static void main(String[] args) {
         Animal[] animals = {new Cat("Cat food", "l1"), new Dog("Dog food", "l2"), new Horse("Horse food", "l3")};
         Veterinarian veterinarian = new Veterinarian();
-        for (Animal a :
-                animals) {
+        for (Animal a : animals) {
             veterinarian.treatAnimal(a);
         }
     }
