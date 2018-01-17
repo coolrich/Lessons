@@ -6,7 +6,6 @@ public class Person {
     int age;
 
     public Person() {
-
     }
 
     public Person(String firstName, String lastName, int age) {
@@ -49,6 +48,6 @@ public class Person {
 
     public static void main(String[] args) {
         new Person().move();
-        new Person("Someone1","Someone1", 30).talk();
+        new Person("Someone1", "Someone1", 30).talk();
     }
 }

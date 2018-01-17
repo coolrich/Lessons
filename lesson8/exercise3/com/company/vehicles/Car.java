@@ -26,35 +26,44 @@ public class Car {
         this.engine = engine;
     }
 
-    private void start() {
+    public void start() {
         System.out.println("Поехали");
     }
 
-    private void stop() {
+    public void stop() {
 
         System.out.println("Останавливаемся");
     }
 
-    private void turnRight() {
+    public void turnRight() {
         System.out.println("Поворот направо");
     }
 
-    private void turnLeft() {
+    public void turnLeft() {
         System.out.println("Поворот налево");
     }
 
-    private void printInfo() {
-        System.out.println("\nBrand: " + brand+
-                "\nClass of car: " + carClass+
-                "\nWeight of car: " +weight+
-                "\nDriver's name: " +driver.getFirstName()+" "+driver.getLastName()+
-                "\nDriver's experience: " + driver.getExperience()+
-                "\nEngine power: " + engine.getPower()+
+    public void printInfo() {
+        System.out.println("\nBrand: " + brand +
+                "\nClass of car: " + carClass +
+                "\nWeight of car: " + weight +
+                "\nDriver's name: " + driver.getFirstName() + " " + driver.getLastName() +
+                "\nDriver's experience: " + driver.getExperience() +
+                "\nEngine power: " + engine.getPower() +
                 "\nEngine manufacturer: " + engine.getManufacturer()
         );
     }
 
     public static void main(String[] args) {
-        new Car("Subaru","sedan",1200,new Driver("John","Tanner",32,14),new Engine(305,"Gunma Oizumi Plant")).printInfo();
+        Driver d1,d2,d3;
+        new Car("Subaru", "sedan", 1200, d1=new Driver("John", "Tanner", 32, 14), new Engine(305, "Gunma Oizumi Plant")).printInfo();
+        new Lorry("Scania", "lorry", 3000, d2=new Driver("Jerico", "Castle", 35, 17), new Engine(450, "GM"), 400).printInfo();
+        new Sportcar("Mitsubishi", "sedan", 1300, d3=new Driver("Carl", "Johnson", 22, 4), new Engine(450, "MM"), 250).printInfo();
+        d1.move();
+        d1.talk();
+        d2.move();
+        d2.talk();
+        d3.move();
+        d3.talk();
     }
 }
