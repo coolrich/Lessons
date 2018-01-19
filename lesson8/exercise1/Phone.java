@@ -46,8 +46,7 @@ public class Phone {
     }
 
     public void sendMessage(String... phoneNumbers) {
-        for (String name :
-                phoneNumbers) {
+        for (String name : phoneNumbers) {
             System.out.println("Message has been sent to " + name);
 
         }
@@ -81,8 +80,7 @@ class PhoneDemo {
         all[1] = new Phone("0985462133", "AA");
         all[2] = new Phone("0968524147", "A", 12);
 
-        for (Phone p :
-                all) {
+        for (Phone p : all) {
             System.out.println(p.getModel() + " " + p.getNumber() + " " + p.getWeight());
             p.receiveCall("Someone", "0964568987");
             System.out.println("\n");
