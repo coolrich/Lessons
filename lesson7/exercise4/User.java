@@ -107,7 +107,7 @@ public class User {
 
     /**
      * Метод для поиска книг в коллекции пользователя
-     * параметр которого принимает аргумент типа String
+     * параметр которого принимает аргумент типа String,
      * который описывает название книги
      */
     private Book findBook(String nameOfBook) {
@@ -141,7 +141,8 @@ public class User {
         for (Book b : books) {
             if (librarian.getBook(b) != null) {
                 addBook(b);
-                System.out.println("The book" + b.getBookName() + " has been added successfully");
+                System.out.println("The user " + getFirstName() + getLastName() + "successfully received the book" + b.getBookName());
+
             }
         }
     }
@@ -158,6 +159,8 @@ public class User {
             Book b;
             if ((b = librarian.giveBook(name)) != null) {
                 addBook(b);
+                System.out.println("The user " + getFirstName() + getLastName() + "successfully received the book" + name);
+
             } else {
                 System.out.println("No books with the same name");
             }
@@ -188,7 +191,7 @@ public class User {
                 deleteBook(name);
                 librarian.getBook(b);
                 returnBook(numOfBooks);
-                System.out.println("The book" + name + " has been returned successfully");
+                System.out.println("The user " + getFirstName() + getLastName() + "successfully returned the book" + name);
 
             } else {
                 System.out.println("No books with the same name");
@@ -209,7 +212,7 @@ public class User {
                 deleteBook(b.getBookName());
                 librarian.getBook(b);
                 returnBook(numOfBooks);
-                System.out.println("The book" + b.getBookName() + " has been returned successfully");
+                System.out.println("The user " + getFirstName() + getLastName() + "successfully returned the book" + b.getBookName());
             }
         }
     }
