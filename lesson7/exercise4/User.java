@@ -74,8 +74,7 @@ public class User {
      */
     private void deleteBook(String name) {
         int i = 1;
-        for (Book b :
-                books) {
+        for (Book b : books) {
             if ((b.getBookName()).equals(name)) {
                 books[i - 1] = null;
                 for (int j = i; j < books.length; j++) {
@@ -98,8 +97,7 @@ public class User {
      * который описывает книгу (название, имя автора, кол-во стр)
      */
     private Book findBook(Book book) {
-        for (Book b :
-                books) {
+        for (Book b : books) {
             if (book == b) {
                 return b;
             }
@@ -114,8 +112,7 @@ public class User {
      */
     private Book findBook(String nameOfBook) {
         if (books[0] != null) {
-            for (Book b :
-                    books) {
+            for (Book b : books) {
                 if (nameOfBook.equals(b.getBookName())) {
                     return b;
                 }
@@ -141,8 +138,7 @@ public class User {
      * @param books
      */
     public void takeBook(Book... books) {
-        for (Book b :
-                books) {
+        for (Book b : books) {
             if (librarian.getBook(b) != null) {
                 addBook(b);
                 System.out.println("The book" + b.getBookName() + " has been added successfully");
@@ -158,8 +154,7 @@ public class User {
      */
 
     public void takeBook(String... namesOfBooks) {
-        for (String name :
-                namesOfBooks) {
+        for (String name : namesOfBooks) {
             Book b;
             if ((b = librarian.giveBook(name)) != null) {
                 addBook(b);
@@ -187,8 +182,7 @@ public class User {
      */
     public void returnBook(String... namesOfBooks) {
         int numOfBooks = 0;
-        for (String name :
-                namesOfBooks) {
+        for (String name : namesOfBooks) {
             Book b;
             if ((b = findBook(name)) != null) {
                 deleteBook(name);
@@ -210,8 +204,7 @@ public class User {
      */
     public void returnBook(Book... books) {
         int numOfBooks = 0;
-        for (Book b :
-                books) {
+        for (Book b : books) {
             if ((b = findBook(b)) != null) {
                 deleteBook(b.getBookName());
                 librarian.getBook(b);

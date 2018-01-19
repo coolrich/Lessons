@@ -63,8 +63,7 @@ public class Librarian {
     public void showUsers() {
         if (users != null) {
             System.out.println("___________________________________________");
-            for (User u :
-                    users) {
+            for (User u : users) {
                 System.out.println("First name " + u.getFirstName() +
                         "\nLast name " + u.getLastName() +
                         "\nPatronymic " + u.getPatronymic() +
@@ -74,8 +73,7 @@ public class Librarian {
                         + "\n");
                 System.out.println("Books:");
                 if (u.getBooks()[0] != null) {
-                    for (Book b :
-                            u.getBooks()) {
+                    for (Book b : u.getBooks()) {
                         System.out.println(b.getBookName());
                     }
                 } else {
@@ -142,8 +140,7 @@ public class Librarian {
      * @return
      */
     private Book findBook(Book book) {
-        for (Book b :
-                books) {
+        for (Book b : books) {
             if (book == b) {
                 return b;
             }
@@ -158,8 +155,7 @@ public class Librarian {
      * @return
      */
     private Book findBook(String name) {
-        for (Book b :
-                books) {
+        for (Book b : books) {
             if (name.equals(b.getBookName())) {
                 return b;
             }
