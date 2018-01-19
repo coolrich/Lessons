@@ -7,6 +7,14 @@ public class Rectangle extends Shape {
     private int x0, x1;
     private int y0;
 
+    public Rectangle(String c, int x0, int x1, int y0, int y1) {
+        super(c);
+        this.x0 = x0;
+        this.x1 = x1;
+        this.y0 = y0;
+        this.y1 = y1;
+    }
+
     public int getX0() {
         return x0;
     }
@@ -40,14 +48,6 @@ public class Rectangle extends Shape {
     }
 
     private int y1;
-
-    public Rectangle(String c, int x0, int x1, int y0, int y1) {
-        super(c);
-        this.x0 = x0;
-        this.x1 = x1;
-        this.y0 = y0;
-        this.y1 = y1;
-    }
 
     public void draw() {
         System.out.println("Drawing rectangle");

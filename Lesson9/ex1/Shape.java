@@ -47,7 +47,7 @@ public abstract class Shape {
         for (Shape s : shapes) {
             s.draw();
             System.out.println(s.hashCode());
-            System.out.println(s.toString());
+            System.out.println(s);
         }
     }
 }
