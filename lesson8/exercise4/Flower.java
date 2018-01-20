@@ -12,14 +12,14 @@ public abstract class Flower {
     private int shelfLife;
     private int cost;
     private static int cntrOfAllFlwrs = 0;
-    private static int costOfAllFlwrs=0;
+    private static int costOfAllFlwrs = 0;
 
     public Flower(String manufacturerCountry, int shelfLife, int cost) {
         this.manufacturerCountry = manufacturerCountry;
         this.shelfLife = shelfLife;
         this.cost = cost;
         cntrOfAllFlwrs++;
-        costOfAllFlwrs+=cost;
+        costOfAllFlwrs += cost;
     }
 
     public static int getCntrOfAllFlwrs() {
@@ -32,7 +32,7 @@ public abstract class Flower {
 
     public abstract String printInfo();
 
-    public  void printPriceOfFlowers(){
+    public void printPriceOfFlowers() {
         System.out.println();
     }
 
