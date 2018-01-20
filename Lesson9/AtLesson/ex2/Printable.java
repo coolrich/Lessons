@@ -1,4 +1,4 @@
-package Lesson9.ex2;
+package Lesson9.AtLesson.ex2;
 
 /**
  * Created by Student on 17.01.2018.
