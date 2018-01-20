@@ -1,4 +1,4 @@
-package Lesson9.AtHome.ex1;
+package lesson9.atHome.ex1;
 
 public class Apple extends Fruit {
     private String appleColor;

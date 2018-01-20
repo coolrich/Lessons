@@ -1,4 +1,4 @@
-package Lesson9.AtHome.ex3;
+package lesson9.atHome.ex3;
 
 /**
  * Создать класс Circle, который содержит

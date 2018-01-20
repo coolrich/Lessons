@@ -1,4 +1,4 @@
-package Lesson9.AtHome.ex5.p1;
+package lesson9.atHome.ex5.p1;
 
 public class SomeClass {
     public static void main(String[] args) {
