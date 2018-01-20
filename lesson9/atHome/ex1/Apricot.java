@@ -25,7 +25,7 @@ public class Apricot extends Fruit {
     }
 
     @Override
-    public String getFrtsName() {
+    public String getFrstName() {
         return "Apricots";
     }
 

@@ -33,7 +33,7 @@ public abstract class Flower {
     public abstract String printInfo();
 
     public void printPriceOfFlowers() {
-        System.out.println();
+        System.out.println(costOfAllFlwrs);
     }
 
     public void setManufacturerCountry(String manufacturerCountry) {
@@ -83,8 +83,7 @@ public abstract class Flower {
         for (Flower[] fl :
                 flowers) {
             System.out.println("\nNumber of bouquet: " + numOfBouquet++);
-            for (Flower f :
-                    fl) {
+            for (Flower f : fl) {
                 System.out.println(
                         "\nName: " + f.printInfo() +
                                 "\nShelf life: " + f.getShelfLife() +

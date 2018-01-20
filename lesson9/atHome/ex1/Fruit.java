@@ -13,7 +13,7 @@ public abstract class Fruit {
 
     public abstract int getCost();
 
-    public abstract String getFrtsName();
+    public abstract String getFrstName();
 
     public abstract int getCostOfFrts();
 

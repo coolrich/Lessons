@@ -13,7 +13,7 @@ public class FruitShop {
         Fruit[] fruits = {new Apple(100, "Green", "Glory to winners", 1), new Pear(90, "Yellow", "Best", 2), new Apricot(15, "Bullet", 3)};
         System.out.println("The total cost of all fruits is " + Fruit.getCostOfAllFrts());
         for (Fruit f : fruits) {
-            System.out.println("The total cost of " + f.getFrtsName() + " is " + f.getCostOfFrts());
+            System.out.println("The total cost of " + f.getFrstName() + " is " + f.getCostOfFrts());
         }
     }
 }
