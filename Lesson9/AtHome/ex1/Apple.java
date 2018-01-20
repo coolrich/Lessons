@@ -4,16 +4,16 @@ public class Apple extends Fruit {
     private String appleColor;
     private String variety;
     private int appleCost;
-    private static int cstOfAllApps=0;
-    private static int appleCntr=0;
+    private static int cstOfAllApps = 0;
+    private static int appleCntr = 0;
 
     public Apple(int weight, String appleColor, String variety, int appleCost) {
-        super(weight,appleCost);
+        super(weight, appleCost);
         this.appleColor = appleColor;
         this.variety = variety;
         this.appleCost = appleCost;
         appleCntr++;
-        cstOfAllApps+=appleCost;
+        cstOfAllApps += appleCost;
     }
 
     @Override
@@ -23,11 +23,11 @@ public class Apple extends Fruit {
 
     @Override
     public int getCost() {
-        return getWeight()*appleCost;
+        return getWeight() * appleCost;
     }
 
     @Override
-    public String getFrtsName(){
+    public String getFrtsName() {
         return "Apples";
     }
 

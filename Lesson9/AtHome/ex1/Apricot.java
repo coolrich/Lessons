@@ -3,15 +3,15 @@ package Lesson9.AtHome.ex1;
 public class Apricot extends Fruit {
     private String variety;
     private int apricotCost;
-    private static int cstOfAllAprcts=0;
-    private static int apricotCntr=0;
+    private static int cstOfAllAprcts = 0;
+    private static int apricotCntr = 0;
 
     public Apricot(int weight, String variety, int apricotCost) {
         super(weight, apricotCost);
         this.variety = variety;
         this.apricotCost = apricotCost;
         apricotCntr++;
-        cstOfAllAprcts+=apricotCost;
+        cstOfAllAprcts += apricotCost;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Apricot extends Fruit {
     }
 
     @Override
-    public String getFrtsName(){
+    public String getFrtsName() {
         return "Apricots";
     }
 
