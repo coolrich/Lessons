@@ -80,8 +80,7 @@ public abstract class Flower {
 
     public static void printFlowers(Flower[][] flowers) {
         int numOfBouquet = 1;
-        for (Flower[] fl :
-                flowers) {
+        for (Flower[] fl : flowers) {
             System.out.println("\nNumber of bouquet: " + numOfBouquet++);
             for (Flower f : fl) {
                 System.out.println(
