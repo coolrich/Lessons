@@ -1,5 +1,5 @@
 package lesson10.ex4;
-
+//купить подогнать
 public class Atelier {
 public void clotheWoman(Clothing[] clothing){
     for (Clothing c:clothing) {
