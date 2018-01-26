@@ -17,6 +17,4 @@ public class Drum implements Instrument {
     public void play() {
         System.out.println("The drum plays. It has " + size.name() + " size.");
     }
-
-
 }
