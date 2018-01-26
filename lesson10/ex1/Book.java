@@ -21,7 +21,7 @@ public class Book implements Printable {
         Book book = (Book) o;
         return Objects.equals(getName(), book.getName());
     }
-//
+
     @Override
     public int hashCode() {
 
