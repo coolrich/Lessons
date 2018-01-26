@@ -7,7 +7,6 @@ public enum Seasons {
             return "Warm season";
         }
     }, AUTUMN(7);
-    private String nameOfSeason = "SUMMER";
     private int averageTemp;
 
     Seasons(int averageTemp) {
@@ -50,5 +49,4 @@ public enum Seasons {
             System.out.println("Season: " + s.name() + "\nAverage temperature " + s.getAverageTemp() + "\nDescription: " + s.getDescription());
         }
     }
-
 }
