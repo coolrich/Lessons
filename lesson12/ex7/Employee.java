@@ -1,4 +1,5 @@
 package lesson12.ex7;
+
 /**
  * Создать класс Employee, у которого есть переменные
  * класса - fullname, salary. Создать массив содержащий
@@ -43,10 +44,10 @@ public class Employee {
         Employee.employees = employees;
     }
 
-    public static Employee[] createEmployees(String...names){
-        employees=new Employee[names.length];
-        for (int i=0;i<employees.length;i++){
-            employees[i]=new Employee(names[i],(int)(Math.random()*1000));
+    public static Employee[] createEmployees(String... names) {
+        employees = new Employee[names.length];
+        for (int i = 0; i < employees.length; i++) {
+            employees[i] = new Employee(names[i], (int) (Math.random() * 1000));
         }
         return employees;
     }
