@@ -23,13 +23,10 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "fullName='" + fullName + '\'' +
-                ", age=" + age +
-                '}';
+        return String.format("Person fullName = %s, age = %d", fullName, age);
     }
 
     public static void main(String[] args) {
-        System.out.println(new Person("I",19));
+        System.out.println(new Person("I", 19));
     }
 }
