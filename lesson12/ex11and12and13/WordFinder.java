@@ -1,17 +1,37 @@
 package lesson12.ex11and12and13;
 
+import jdk.nashorn.api.tree.Tree;
+
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WordFinder {
-    public static String findSmallest(String str) {
-        Pattern pattern = Pattern.compile("[a-z|1-9]+", Pattern.CASE_INSENSITIVE);
+    public static List<StringBuilder> findSmallest(String str) {
+        Pattern pattern = Pattern.compile("[a-z]+", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(str);
-        String word = matcher.find() ? matcher.group() : "";
+        List<StringBuilder> strings = new ArrayList<StringBuilder>();
+        int count = 0;
         while (matcher.find()) {
-            word = matcher.group().length() < word.length() ? matcher.group() : word;
+            strings.add(new StringBuilder());
+            for (int i = 0; i < matcher.group().length(); i++) {
+                strings.get(count).append(matcher.group().charAt(i));
+            }
+            count++;
         }
-        return word;
+        strings.sort(new Comparator<StringBuilder>() {
+            @Override
+            public int compare(StringBuilder o1, StringBuilder o2) {
+                return o1.length() > o2.length() ? 1 : -1;
+            }
+        });
+        count = 1;
+        List<StringBuilder> result = new ArrayList<StringBuilder>();
+        result.add(strings.get(0));
+        while (count < strings.size() && (strings.get(0).length() == strings.get(count).length())) {
+            result.add(strings.get(count++));
+        }
+        return result;
     }
 
     public static int countOfLatinWords(String str) {
@@ -35,8 +55,8 @@ public class WordFinder {
     }
 
     public static void main(String[] args) {
-        System.out.println(findSmallest("aaaaaaa abc  d 1 safdas sf f"));
         System.out.println(countOfLatinWords("aaaaaaa abc  d 1 safdas sf f"));
         System.out.println(palindromeFinder("Если есть хвосты по дз, начните с 1 не сданного задания. 123 324 111 4554 1"));
+        System.out.println(findSmallest("afasdfs ffffffffffffffffff s aaaaa b"));
     }
 }
