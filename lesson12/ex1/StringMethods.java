@@ -1,4 +1,4 @@
-package lesson12.ex2;
+package lesson12.ex1;
 
 /**
  * Created by Student on 24.01.2018.
