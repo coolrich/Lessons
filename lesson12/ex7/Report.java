@@ -1,7 +1,8 @@
 package lesson12.ex7;
 
 public class Report {
-    public static void generateReport(Employee[] employees) {
+
+    public void generateReport(Employee[] employees) {
         System.out.println("#***Name**********Salary");
         int i = 0;
         for (Employee e : employees) {
@@ -10,6 +11,6 @@ public class Report {
     }
 
     public static void main(String[] args) {
-        generateReport(Employee.createEmployees("Adam", "Carl", "John"));
+        new Report().generateReport(Employee.createEmployees("Adam", "Carl", "John"));
     }
 }

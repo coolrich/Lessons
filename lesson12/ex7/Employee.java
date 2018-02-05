@@ -15,7 +15,7 @@ public class Employee {
     private double salary;
     private static Employee[] employees;
 
-    public Employee(String fullname, int salary) {
+    public Employee(String fullname, double salary) {
         this.fullname = fullname;
         this.salary = salary;
     }
