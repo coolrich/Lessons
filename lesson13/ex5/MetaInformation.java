@@ -17,7 +17,6 @@ public class MetaInformation {
         System.out.println(someClass.getConstructors());
         System.out.println(someClass.getMethods());
         System.out.println(someClass.getFields());
-
     }
 
     public static void main(String[] args) {
