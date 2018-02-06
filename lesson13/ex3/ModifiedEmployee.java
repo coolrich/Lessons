@@ -29,7 +29,7 @@ public class ModifiedEmployee extends Employee {
     public static ModifiedEmployee[] createEmployees(String... names) {
         modifiedEmployees = new ModifiedEmployee[names.length];
         for (int i = 0; i < modifiedEmployees.length; i++) {
-            modifiedEmployees[i] = new ModifiedEmployee(names[i], (double) (Math.random() * 1000),new Date());
+            modifiedEmployees[i] = new ModifiedEmployee(names[i], (double) (Math.random() * 1000), new Date());
         }
         return modifiedEmployees;
     }
