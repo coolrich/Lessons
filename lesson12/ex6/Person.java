@@ -1,6 +1,6 @@
 package lesson12.ex6;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private String fullName;
     int age;
 
@@ -11,6 +11,22 @@ public class Person {
     public Person(String aFullName, int anAge) {
         fullName = aFullName;
         age = anAge;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public void move() {
@@ -28,5 +44,10 @@ public class Person {
 
     public static void main(String[] args) {
         System.out.println(new Person("I", 19));
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return this.age-o.age;
     }
 }
