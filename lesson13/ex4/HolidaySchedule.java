@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 public class HolidaySchedule {
     public static void main(String[] args) {
         DateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-        Calendar[] holidays = {new GregorianCalendar(2018, 0, 07),
+        Calendar[] holidays = {new GregorianCalendar(2018, 0, 7),
                 new GregorianCalendar(2018, 0, 14),
                 new GregorianCalendar(2018, 2, 8)
         };
