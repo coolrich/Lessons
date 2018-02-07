@@ -2,11 +2,9 @@ package lesson13.ex3;
 
 import lesson12.ex7.Employee;
 
-import java.text.DateFormat;
+
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class ModifiedEmployee extends Employee {
     private Date salaryDate;

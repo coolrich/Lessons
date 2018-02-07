@@ -40,6 +40,5 @@ public class FullReport {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
     }
 }
