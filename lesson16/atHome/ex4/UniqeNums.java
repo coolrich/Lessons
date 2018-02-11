@@ -9,6 +9,6 @@ public class UniqeNums {
     }
 
     public static void main(String[] args) {
-        printUniqeNums(1,2,3,4,4,5);
+        printUniqeNums(1, 2, 3, 4, 4, 5);
     }
 }
