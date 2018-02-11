@@ -22,18 +22,18 @@ public class CollectionsDemo {
         p1.setAge(18);
         arrayList.set(1, p1);
         enumerateCollection(arrayList);
-        System.out.println("size "+arrayList.size());
-        arrayList.remove(arrayList.size()-1);
-        System.out.println("size "+arrayList.size());
+        System.out.println("size " + arrayList.size());
+        arrayList.remove(arrayList.size() - 1);
+        System.out.println("size " + arrayList.size());
         System.out.println(arrayList);
-        Object[] objects=arrayList.toArray();
-        for (Object object:objects){
+        Object[] objects = arrayList.toArray();
+        for (Object object : objects) {
             System.out.println(object);
         }
         System.out.println("\n");
-        Person[] persons=new Person[arrayList.size()];
+        Person[] persons = new Person[arrayList.size()];
         arrayList.toArray(persons);
-        for (Person person:persons){
+        for (Person person : persons) {
             System.out.println(person.getFullName());
         }
         recievePersonArray2(arrayList);
@@ -45,10 +45,11 @@ public class CollectionsDemo {
             System.out.println("Element of arrayList " + person);
         }
     }
-    public static void recievePersonArray2(List<Person> arrayList){
+
+    public static void recievePersonArray2(List<Person> arrayList) {
         Person[] persons = arrayList.toArray(new Person[0]);
-        for (Person p: persons){
-            System.out.println("El of arrList: "+p.getFullName());
+        for (Person p : persons) {
+            System.out.println("El of arrList: " + p.getFullName());
         }
     }
 }

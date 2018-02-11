@@ -11,8 +11,8 @@ import java.util.TreeSet;
 public class ComparableDemo {
     public static void main(String[] args) {
         Set<Person> personSet = new TreeSet<Person>();
-        personSet.add(new Person("Jack",20));
-        personSet.add(new Person("Jack",19));
-        personSet.add(new Person("Jack",21));
+        personSet.add(new Person("Jack", 20));
+        personSet.add(new Person("Jack", 19));
+        personSet.add(new Person("Jack", 21));
     }
 }
