@@ -1,4 +1,4 @@
-package lesson15.ex3;
+package lesson15.atLesson.ex3;
 
 import lesson12.ex6.Person;
 

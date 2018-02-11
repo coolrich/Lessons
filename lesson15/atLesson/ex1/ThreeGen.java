@@ -1,8 +1,5 @@
-package lesson15.ex1;
+package lesson15.atLesson.ex1;
 
-import lesson13.ex6.Food;
-import lesson7.exercise2.Person;
-import lesson7.onTheLesson.Car;
 import lesson8.exercise5.Animal;
 import lesson8.exercise5.Cat;
 

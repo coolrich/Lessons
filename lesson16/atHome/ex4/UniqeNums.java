@@ -1,7 +1,6 @@
-package lesson16.ex4;
+package lesson16.atHome.ex4;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.TreeSet;
 
 public class UniqeNums {
