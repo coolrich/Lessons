@@ -48,7 +48,7 @@ public class Matrix<T extends Number> {
             for (int i = 0; i < numOfRows; i++) {
                 for (int j = 0; j < twoDimMatrix[0].length; j++) {
                     Number n = (T) ((Number) (twoDimMatrix[i][j].doubleValue() + anotherMatrix.getElement(i, j).doubleValue()));
-                    twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix,n );
+                    twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix, n);
                 }
             }
         } else {
@@ -62,7 +62,7 @@ public class Matrix<T extends Number> {
         for (int i = 0; i < numOfRows; i++) {
             for (int j = 0; j < numOfColumns; j++) {
                 Number n = (T) ((Number) (twoDimMatrix[i][j].doubleValue() * number.doubleValue()));
-                twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix,n );
+                twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix, n);
             }
         }
     }
@@ -76,7 +76,7 @@ public class Matrix<T extends Number> {
                         temp = (T) ((Number) (temp.doubleValue() + twoDimMatrix[i][j].doubleValue() * anotherMatrix.getElement(k, i).doubleValue()));
                     }
 
-                    twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix,temp);
+                    twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix, temp);
                 }
             }
         } else {
