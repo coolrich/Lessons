@@ -50,7 +50,7 @@ public class ThreeGen<T extends Comparable, V extends Animal & Serializable, K e
     }
 
     public static void main(String[] args) {
-//        ThreeGen<Integer, Double, Character> threeGen1 = new ThreeGen<>(1, 2.0, '3');
+//        ThreeGen<Integer, Double, GameCharacter> threeGen1 = new ThreeGen<>(1, 2.0, '3');
 //        threeGen1.showTypes();
 //        new ThreeGen<Person,Car,Food>(new Person("A",19), new Car(1000,"white"), new Food()).showTypes();
         new ThreeGen<>(new String(""), new Cat("", ""), 5.0).showTypes();
