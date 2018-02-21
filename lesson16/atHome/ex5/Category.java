@@ -1,5 +1,7 @@
 package lesson16.atHome.ex5;
 
+import lesson16.atLesson.ex5.Product;
+
 import java.util.*;
 
 /**
@@ -33,18 +35,7 @@ public class Category {
     }
 
     public void reverseSort() {
-//        Collections.reverseOrder(new Comparator<Product>() {
-//            @Override
-//            public int compare(Product o1, Product o2) {
-//                if (o1.getPrice() - o2.getPrice() > 0) {
-//                    return 1;
-//                } else if (o1.getPrice() - o2.getPrice() < 0) {
-//                    return -1;
-//                } else {
-//                    return 0;
-//                }
-//            }
-//        });
+
 Collections.reverse(new LinkedList<>(products));
     }
 
@@ -63,4 +54,6 @@ Collections.reverse(new LinkedList<>(products));
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
+
+
 }
