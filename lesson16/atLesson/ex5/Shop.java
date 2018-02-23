@@ -1,6 +1,7 @@
 package lesson16.atLesson.ex5;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -35,9 +36,40 @@ public class Shop {
         );
         products3.addAll(products1);
         printProducts(products3);
+/**
+ * At home
+ */
+        System.out.println();
+        category.sortByPrice();
+        printCategory(category);
+        System.out.println();
+        category.reverseSortByPrice();
+        printCategory(category);
+        System.out.println();
+        category.sortByName();
+        printCategory(category);
+        System.out.println();
+        category.reverseSortByName();
+        printCategory(category);
+        System.out.println();
+        category.sortByRating();
+        printCategory(category);
+        System.out.println();
+        category.reverseSortByRating();
+        printCategory(category);
+        System.out.println();
     }
 
     private static void printProducts(Set<Product> products) {
         products.forEach(System.out::println);
     }
+
+    private static void printProducts(List<Product> productList) {
+        productList.forEach(System.out::println);
+    }
+
+    private static void printCategory(Category category) {
+        category.getProducts().forEach(System.out::println);
+    }
+
 }

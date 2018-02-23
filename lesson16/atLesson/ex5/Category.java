@@ -1,6 +1,6 @@
 package lesson16.atLesson.ex5;
 
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by student on 11.02.2018.
@@ -31,5 +31,44 @@ public class Category {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    public void sortByPrice() {
+        List<Product> productList = new LinkedList<>(products);
+        Collections.sort(productList, new ProductComparatorPrice());
+        products = new LinkedHashSet<>(productList);
+    }
+
+    public void reverseSortByPrice() {
+        List<Product> productList = new ArrayList<>(products);
+        Collections.sort(productList, new ProductComparatorPrice());
+        Collections.reverse(productList);
+        products = new LinkedHashSet<>(productList);
+    }
+
+    public void sortByName() {
+        List<Product> productList = new ArrayList<>(products);
+        Collections.sort(productList, new ProductComparatorName());
+        products = new LinkedHashSet<>(productList);
+    }
+
+    public void reverseSortByName() {
+        List<Product> productList = new ArrayList<>(products);
+        Collections.sort(productList, new ProductComparatorName());
+        Collections.reverse(productList);
+        products = new LinkedHashSet<>(productList);
+    }
+
+    public void sortByRating() {
+        List<Product> productList = new ArrayList<>(products);
+        Collections.sort(productList, new ProductComparatorRating());
+        products = new LinkedHashSet<>(productList);
+    }
+
+    public void reverseSortByRating() {
+        List<Product> productList = new ArrayList<>(products);
+        Collections.sort(productList, new ProductComparatorRating());
+        Collections.reverse(productList);
+        products = new LinkedHashSet<>(productList);
     }
 }
