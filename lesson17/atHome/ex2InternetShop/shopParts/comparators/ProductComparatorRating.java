@@ -4,7 +4,7 @@ import lesson17.atHome.ex2InternetShop.shopParts.Product;
 
 import java.util.Comparator;
 
-public class ProductComparatorRating implements Comparator<Product>{
+public class ProductComparatorRating implements Comparator<Product> {
 
     @Override
     public int compare(Product o1, Product o2) {

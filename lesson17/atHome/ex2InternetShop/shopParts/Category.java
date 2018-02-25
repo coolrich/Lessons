@@ -41,8 +41,8 @@ public class Category {
         this.products = products;
     }
 
-    public void addProduct(String name,int price, int rating){
-        products.add(new Product(name,price,rating));
+    public void addProduct(String name, int price, int rating) {
+        products.add(new Product(name, price, rating));
     }
 
     public void sortByPrice() {
@@ -74,7 +74,7 @@ public class Category {
     public void sortByRating() {
         List<Product> productList = new ArrayList<>(products);
         Collections.sort(productList, new ProductComparatorRating());
-    products = new LinkedHashSet<>(productList);
+        products = new LinkedHashSet<>(productList);
     }
 
     public void reverseSortByRating() {

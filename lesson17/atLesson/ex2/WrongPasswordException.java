@@ -7,11 +7,13 @@ public class WrongPasswordException extends Exception {
     public WrongPasswordException(String message) {
         super(message);
     }
-    public WrongPasswordException(){
+
+    public WrongPasswordException() {
 
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "WrongPasswordException{} " + super.toString();
     }
 

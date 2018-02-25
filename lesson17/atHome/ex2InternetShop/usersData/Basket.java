@@ -11,13 +11,16 @@ public class Basket {
     public Basket() {
         productList = new ArrayList<>();
     }
-    public void addProduct(Product product){
+
+    public void addProduct(Product product) {
         productList.add(product);
     }
-    public void removeProduct(Product product){
+
+    public void removeProduct(Product product) {
         productList.remove(product);
     }
-    public void showProducts(){
+
+    public void showProducts() {
         productList.forEach(System.out::println);
     }
 }

@@ -19,8 +19,8 @@ public class FinallyDemo {
             return true;
         } catch (WrongPasswordException | WrongLoginException e) {
             System.out.println(e.getMessage());
-        }finally {
-            System.out.printf("Login %s, password %s, conf passwd %s",login,password,confPassword);
+        } finally {
+            System.out.printf("Login %s, password %s, conf passwd %s", login, password, confPassword);
         }
         return true;
     }

@@ -39,10 +39,12 @@ public class InternetShop {
     public void addProducts(String categoryName, String newProductName, int price, int rating) {
         categoryMap.get(categoryName).addProduct(newProductName, price, rating);
     }
-    public void showCategoriesList(){
+
+    public void showCategoriesList() {
         categoryMap.keySet().forEach(System.out::println);
     }
-    public void showUserBasket(){
+
+    public void showUserBasket() {
         users.showBasket();
     }
 

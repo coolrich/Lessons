@@ -1,7 +1,5 @@
 package lesson16.atHome.ex5;
 
-import java.util.Collections;
-
 /**
  * Created by student on 11.02.2018.
  */

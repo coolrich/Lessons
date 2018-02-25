@@ -14,16 +14,16 @@ public class User {
         userLoginPassword = new HashMap<>();
     }
 
+    public User(Map<String, String> usersData) {
+        this.userLoginPassword = usersData;
+    }
+
     public Basket getBasket() {
         return basket;
     }
 
     public void setBasket(Basket basket) {
         this.basket = basket;
-    }
-
-    public User(Map<String, String> usersData) {
-        this.userLoginPassword = usersData;
     }
 
     public Map<String, String> getUserLoginPassword() {
@@ -54,7 +54,8 @@ public class User {
             return false;
         }
     }
-    public void showBasket(){
+
+    public void showBasket() {
         basket.showProducts();
     }
 }
