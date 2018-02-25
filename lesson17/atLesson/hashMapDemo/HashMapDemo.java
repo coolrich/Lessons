@@ -1,4 +1,4 @@
-package lesson17.atLesson;
+package lesson17.atLesson.hashMapDemo;
 
 import java.util.*;
 

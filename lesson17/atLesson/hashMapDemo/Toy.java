@@ -1,4 +1,4 @@
-package lesson17.atLesson;
+package lesson17.atLesson.hashMapDemo;
 
 /**
  * Created by student on 18.02.2018.
