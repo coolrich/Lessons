@@ -7,7 +7,7 @@ import java.io.*;
  */
 public class SerializableDemo {
 
-    public static final String FILE_NAME = "C:\\Users\\student\\Desktop\\temp\\src\\l18\\e2\\horse.ser";
+    public static final String FILE_NAME = "C:\\Users\\student\\Desktop\\temp\\src\\l18\\e5\\horse.ser";
 
     public static void main(String[] args) {
         Horse horse = new Horse(new Halter("Red"), "h1"), horse1;
