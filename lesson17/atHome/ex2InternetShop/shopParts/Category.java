@@ -12,16 +12,20 @@ import java.util.*;
 public class Category {
     private String name;
     private Set<Product> products;
+    private List<Product> listOfProducts;
 
     public Category() {
+        listOfProducts = new ArrayList<>();
+        products = new HashSet<>();
     }
 
     public Category(String name) {
+        this();
         this.name = name;
     }
 
     public Category(String name, Set<Product> products) {
-        this.name = name;
+        this(name);
         this.products = products;
     }
 
@@ -37,12 +41,31 @@ public class Category {
         return products;
     }
 
+    private int numOfProducts(Product p) {
+        return Collections.frequency(listOfProducts, p);
+    }
+
+    public boolean isContains(Product p) {
+        return numOfProducts(p) > 0 ? true : false;
+    }
+
+    public Product getProduct(String name) {
+        for (Product p : products) {
+            if (p.getName().equals(name) && isContains(p)) {
+                return new Product(p.getName(), p.getPrice(), p.getRating());
+            }
+        }
+        return null;
+    }
+
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
 
-    public void addProduct(String name, int price, int rating) {
-        products.add(new Product(name, price, rating));
+    public void addProduct(String name, double price, int rating) {
+        Product p = new Product(name, price, rating);
+        products.add(p);
+        listOfProducts.add(p);
     }
 
     public void sortByPrice() {
@@ -82,5 +105,13 @@ public class Category {
         Collections.sort(productList, new ProductComparatorRating());
         Collections.reverse(productList);
         products = new LinkedHashSet<>(productList);
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "name='" + name + '\'' +
+                ", products=" + products +
+                "}\n";
     }
 }

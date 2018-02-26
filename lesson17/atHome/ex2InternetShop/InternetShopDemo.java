@@ -6,10 +6,7 @@ import java.util.Scanner;
 
 public class InternetShopDemo {
     public static boolean authorization(InternetShop is, String login, String password) {
-        if (is.getMapUsers() == null || login == null || password == null) {
-            return false;
-        }
-        if (is.findUser(login, password)) {
+        if (login != null && password != null && is.findUser(login, password)) {
             return true;
         } else {
             return false;
@@ -54,17 +51,25 @@ public class InternetShopDemo {
                     psswd = init.getPsswd();
                     while (!authorization(is, lgn, psswd)) {
                         System.out.println("Try again");
+                        lgn = init.getLgn();
+                        psswd = init.getPsswd();
                     }
                     System.out.println("Done");
-                    System.out.println("Main menu:");
-                    System.out.println("1. List of catalogs");
-                    System.out.println("2. My basket");
-                    System.out.println("3. Log out");
-                    choice = s.nextLine();
                     while (isContinue) {
+                        System.out.println("Main menu:");
+                        System.out.println("1. List of catalogs");
+                        System.out.println("2. My basket");
+                        System.out.println("3. Log out");
+                        choice = s.nextLine();
                         switch (choice) {
                             case "1":
+                                System.out.println("Categories:");
                                 is.showCategoriesList();
+                                System.out.println("Choose category(name):");
+                                String categoryName = is.selectCategory(s.nextLine());
+                                System.out.println("Choose product(name):");
+                                String productName = s.nextLine();
+                                is.selectAndGetProductToBasket(categoryName,productName);
                                 break;
                             case "2":
                                 is.showUserBasket();
@@ -93,6 +98,12 @@ public class InternetShopDemo {
         } catch (WrongInputException e) {
             e.printStackTrace();
         }
+        is.addCategory("Cloths");
+        is.addCategory("Electronics");
+        is.addCategory("Food");
+        is.addProducts("Cloths","Dress", 1001.2, 4);
+        is.addProducts("Cloths","Anorak", 1001.25, 5);
+        is.addProducts("Cloths","T-Shirt", 1212.5, 5);
     }
 
     public static String getChoice(Scanner s) {
@@ -124,9 +135,9 @@ public class InternetShopDemo {
         }
 
         public Init invoke() {
-            System.out.print("Login(>3 characters): ");
+            System.out.print("Login: ");
             lgn = s.nextLine();
-            System.out.print("Password(>7 characters): ");
+            System.out.print("Password: ");
             psswd = s.nextLine();
             return this;
         }
