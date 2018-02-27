@@ -47,7 +47,7 @@ public class Category {
     }
 
     public boolean isContains(Product p) {
-        return numOfProducts(p) > 0 ? true : false;
+        return numOfProducts(p) > 0;
     }
 
     public Product getProduct(int id) {
