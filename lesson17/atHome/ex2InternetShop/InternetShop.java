@@ -5,28 +5,29 @@ import lesson17.atHome.ex2InternetShop.shopParts.Category;
 import lesson17.atHome.ex2InternetShop.shopParts.Product;
 import lesson17.atHome.ex2InternetShop.usersData.User;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class InternetShop {
-    private User users;
+    private User user;
     private Map<String, Category> categoryMap;
 
     public InternetShop() {
-        users = new User();
+        user = new User();
         categoryMap = new HashMap<>();
     }
 
     public InternetShop(User users) {
-        this.users = users;
+        this.user = users;
     }
 
     public boolean findUser(String name, String pswd) {
-        return users.findUser(name, pswd);
+        return user.findUser(name, pswd);
     }
 
     public void addUser(String name, String pswd) throws WrongInputException {
-        users.addUser(name, pswd);
+        user.addUser(name, pswd);
     }
 
     public void addCategory(String categoryName) {
@@ -47,31 +48,89 @@ public class InternetShop {
     }
 
     public void showUserBasket() {
-        users.showBasket();
+        user.showBasket();
     }
 
-    public String selectCategory(String categoryName) {
+    public boolean selectCategory(String categoryName) {
         Category category = categoryMap.get(categoryName);
+        boolean b;
         if (category != null) {
             showCategory(categoryName);
+            b = true;
         } else {
+            b = false;
             System.out.println("There is no " + categoryName);
         }
-        return categoryName;
+        return b;
     }
 
     private void showCategory(String category) {
-        categoryMap.values().forEach(System.out::println);
+        for (Category c : categoryMap.values()) {
+            if (c.getName().equals(category)) {
+                System.out.println(c);
+            }
+        }
+
     }
 
-    public void selectAndGetProductToBasket(String categoryName, String productName) {
+    public boolean selectAndGetProductToBasket(String categoryName, int productId) {
+        Product p = null;
+        boolean b;
         if (categoryMap.get(categoryName) != null) {
-            users.getBasket().addProduct(getProduct(categoryName,productName ));
+            user.getBasket().addProductToProductsList(p = getProduct(categoryName, productId));
+            b = true;
         } else {
-            System.out.println("There is no " + productName);
+            System.out.println("There is no " + productId);
+            b = false;
+        }
+        return b;
+    }
+
+    private Product getProduct(String categoryName, int productId) {
+        return categoryMap.get(categoryName).getProduct(productId);
+    }
+
+    private Collection<Category> getCategory() {
+        return categoryMap.values();
+    }
+
+    public void sortByPrice() {
+        getCategory().forEach(Category::sortByPrice);
+    }
+
+    public void sortByName() {
+        getCategory().forEach(Category::sortByName);
+    }
+
+    public void sortByRating() {
+        getCategory().forEach(Category::sortByRating);
+    }
+
+    public void reverseSortByPrice() {
+        getCategory().forEach(Category::reverseSortByPrice);
+    }
+
+    public void reverseSortByName() {
+        getCategory().forEach(Category::reverseSortByName);
+    }
+
+    public void reverseSortByRating() {
+        getCategory().forEach(Category::reverseSortByRating);
+    }
+
+    public void buyAll() {
+        if(user.getCash()>=user.getTotalCost()){
+            user.getBasket().buyAllProducts();
+        }else{
+            System.out.println("You don't have enough money!");
         }
     }
-    private Product getProduct(String categoryName,String productName){
-        return categoryMap.get(categoryName).getProduct(productName);
+
+    public void buyProduct(int id) {
+        user.getBasket().buyProduct(id);
+    }
+
+    public void showBoughtProductsList() {
+        user.getBasket().showBoughtProductsList();
     }
 }

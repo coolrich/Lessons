@@ -8,8 +8,10 @@ import java.util.Map;
 public class User {
     private Map<String, String> userLoginPassword;
     private Basket basket;
+    private int cash;
 
     public User() {
+        cash = 2000;
         this.basket = new Basket();
         userLoginPassword = new HashMap<>();
     }
@@ -56,6 +58,19 @@ public class User {
     }
 
     public void showBasket() {
-        basket.showProducts();
+        basket.showProductList();
     }
+
+    public int getCash() {
+        return cash;
+    }
+
+    public void setCash(int cash) {
+        this.cash = cash;
+    }
+
+    public int getTotalCost() {
+        return basket.getTotalCost();
+    }
+
 }

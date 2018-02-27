@@ -46,36 +46,95 @@ public class InternetShopDemo {
 
                     break;
                 case "2":
-                    init = new Init(s).invoke();
-                    lgn = init.getLgn();
-                    psswd = init.getPsswd();
-                    while (!authorization(is, lgn, psswd)) {
-                        System.out.println("Try again");
+                    boolean b;
+                    do {
+                        init = new Init(s).invoke();
                         lgn = init.getLgn();
                         psswd = init.getPsswd();
-                    }
+                        b = !authorization(is, lgn, psswd);
+                        System.out.print(b ? "Try again\n" : "");
+                    } while (b);
                     System.out.println("Done");
                     while (isContinue) {
-                        System.out.println("Main menu:");
+                        System.out.println("Main menu");
                         System.out.println("1. List of catalogs");
                         System.out.println("2. My basket");
                         System.out.println("3. Log out");
+                        System.out.println("4. Show bought products");
+                        System.out.print("number:");
                         choice = s.nextLine();
                         switch (choice) {
                             case "1":
-                                System.out.println("Categories:");
+                                System.out.println("How do you want to sort products?");
+                                System.out.println("1. Sort by price");
+                                System.out.println("2. Sort by name");
+                                System.out.println("3. Sort by rating");
+                                System.out.println("4. Reverse sort by price");
+                                System.out.println("5. Reverse sort by name");
+                                System.out.println("6. Reverse sort by rating");
+                                System.out.print("number:");
+                                choice = s.nextLine();
+                                switch (choice) {
+                                    case "1":
+                                        is.sortByPrice();
+                                        break;
+                                    case "2":
+                                        is.sortByName();
+                                        break;
+                                    case "3":
+                                        is.sortByRating();
+                                        break;
+                                    case "4":
+                                        is.reverseSortByPrice();
+                                        break;
+                                    case "5":
+                                        is.reverseSortByName();
+
+                                        break;
+                                    case "6":
+                                        is.reverseSortByRating();
+                                        break;
+                                }
+
+
+                                System.out.println("Categories of products:");
                                 is.showCategoriesList();
-                                System.out.println("Choose category(name):");
-                                String categoryName = is.selectCategory(s.nextLine());
-                                System.out.println("Choose product(name):");
-                                String productName = s.nextLine();
-                                is.selectAndGetProductToBasket(categoryName,productName);
+                                System.out.println("Enter the name of category:");
+                                String categoryName;
+                                do {
+                                    categoryName = s.nextLine();
+                                    System.out.println("Choose category(name):");
+                                } while (!is.selectCategory(categoryName));
+                                int productId;
+                                do {
+                                    System.out.println("Choose product(id):");
+                                    productId = Integer.parseInt(s.nextLine());
+                                } while (!is.selectAndGetProductToBasket(categoryName, productId));
                                 break;
                             case "2":
                                 is.showUserBasket();
+                                System.out.println("1. Buy all products");
+                                System.out.println("2. Buy product");
+                                System.out.println("3. Back");
+                                choice = s.nextLine();
+                                switch (choice) {
+                                    case "1":
+                                        is.buyAll();
+                                        break;
+                                    case "2":
+                                        System.out.println("Product's id:");
+                                        is.buyProduct(Integer.parseInt(s.nextLine()));
+                                        break;
+                                    case "3":
+                                        break;
+                                }
                                 break;
                             case "3":
                                 isContinue = false;
+                                break;
+                            case "4":
+                                is.showBoughtProductsList();
+                                s.nextLine();
                                 break;
                         }
                     }
@@ -101,14 +160,14 @@ public class InternetShopDemo {
         is.addCategory("Cloths");
         is.addCategory("Electronics");
         is.addCategory("Food");
-        is.addProducts("Cloths","Dress", 1001.2, 4);
-        is.addProducts("Cloths","Anorak", 1001.25, 5);
-        is.addProducts("Cloths","T-Shirt", 1212.5, 5);
+        is.addProducts("Cloths", "Dress", 1001.2, 4);
+        is.addProducts("Cloths", "Anorak", 1001.25, 5);
+        is.addProducts("Cloths", "T-Shirt", 1212.5, 5);
     }
 
     public static String getChoice(Scanner s) {
         String choice;
-        System.out.println("Please, sign in or log in (1,2)");
+        System.out.println("Please, enter the number:");
         System.out.println("1. Sign in");
         System.out.println("2. Log in");
         System.out.println("3. Exit");
@@ -139,6 +198,7 @@ public class InternetShopDemo {
             lgn = s.nextLine();
             System.out.print("Password: ");
             psswd = s.nextLine();
+            s = new Scanner(System.in);
             return this;
         }
     }

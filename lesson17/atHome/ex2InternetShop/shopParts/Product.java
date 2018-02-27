@@ -7,8 +7,11 @@ public class Product implements Comparable<Product> {
     private String name;
     private double price;
     private int rating;
+    private static int counter = 0;
+    private int id;
 
     public Product(String name, double price, int rating) {
+        id=counter++;
         this.name = name;
         this.price = price;
         this.rating = rating;
@@ -64,11 +67,11 @@ public class Product implements Comparable<Product> {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", rating=" + rating +
-                '}';
+        return "Product: " + name +
+                " Price: " + price +
+                " Rating:" + rating +
+                " Id: " + id +
+                "\n";
     }
 
     @Override
@@ -78,5 +81,13 @@ public class Product implements Comparable<Product> {
         } else {
             return this.getName().compareTo(o.getName());
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

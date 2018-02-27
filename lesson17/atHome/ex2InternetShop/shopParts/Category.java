@@ -27,6 +27,7 @@ public class Category {
     public Category(String name, Set<Product> products) {
         this(name);
         this.products = products;
+        listOfProducts.addAll(products);
     }
 
     public String getName() {
@@ -49,10 +50,12 @@ public class Category {
         return numOfProducts(p) > 0 ? true : false;
     }
 
-    public Product getProduct(String name) {
+    public Product getProduct(int id) {
         for (Product p : products) {
-            if (p.getName().equals(name) && isContains(p)) {
-                return new Product(p.getName(), p.getPrice(), p.getRating());
+            if (p.getId()==id && isContains(p)) {
+                int newId= p.getId()+1;
+                p.setId(newId);
+                return p;
             }
         }
         return null;
@@ -109,9 +112,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Category{" +
-                "name='" + name + '\'' +
-                ", products=" + products +
-                "}\n";
+        return "Category: " + name + "\n" +
+                "Products: \n" + products;
     }
 }
