@@ -1,8 +1,6 @@
 package lesson10.ex2;
 
 public class Drum implements Instrument {
-    enum Size {SMALL, MEDIUM, HUGE}
-
     private Size size = Size.valueOf("SMALL");
 
     public Drum(String size) {
@@ -17,4 +15,6 @@ public class Drum implements Instrument {
     public void play() {
         System.out.println("The drum plays. It has " + size.name() + " size.");
     }
+
+    enum Size {SMALL, MEDIUM, HUGE}
 }

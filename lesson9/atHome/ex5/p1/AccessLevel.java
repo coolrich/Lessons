@@ -1,10 +1,10 @@
 package lesson9.atHome.ex5.p1;
 
-public class AccessLevel{
-    static Object defaultObj = new Object();
+public class AccessLevel {
     static public Object publicObj = new Object();
-    static private Object privateObj = new Object();
     static protected Object protectedObj = new Object();
+    static Object defaultObj = new Object();
+    static private Object privateObj = new Object();
 
     static void defaultMethod() {
         System.out.println("In defaultMethod");

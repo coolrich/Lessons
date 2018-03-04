@@ -43,16 +43,16 @@ public class Basket {
     public void buyAllProducts() {
         int size = productList.size();
         for (int i = 0; i < size; i++) {
-                boughtProductsList.add(productList.get(i));
+            boughtProductsList.add(productList.get(i));
         }
         productList.clear();
     }
 
-    public int getTotalCost(){
-        int total=0;
+    public int getTotalCost() {
+        int total = 0;
 //        int total = productList.stream().mapToInt(product -> (int) product.getPrice()).sum();
-        for (Product p:productList){
-            total+=p.getPrice();
+        for (Product p : productList) {
+            total += p.getPrice();
         }
         return total;
     }

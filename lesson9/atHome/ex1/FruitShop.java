@@ -1,10 +1,5 @@
 package lesson9.atHome.ex1;
 
-import lesson9.atHome.ex1.Apple;
-import lesson9.atHome.ex1.Apricot;
-import lesson9.atHome.ex1.Fruit;
-import lesson9.atHome.ex1.Pear;
-
 /**
  * Фруктовая лавка. Создать абстрактный класс Фрукт и классы Яблоко, Груша, Абрикос расширяющие его. Класс Фрукт содержит:
  * a) переменную вес,

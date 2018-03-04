@@ -7,7 +7,7 @@ public class SwitchOperator {
     public static void main(String[] args) {
         String day = args.length > 0 ? args[0] : "6";
         int i = Integer.parseInt(day);
-        switch (i){
+        switch (i) {
             case 1:
                 System.out.println("Monday");
                 break;

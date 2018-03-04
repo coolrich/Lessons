@@ -1,7 +1,6 @@
 package lesson12.atLesson.ex4;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Enumeration;
 import java.util.Locale;
 import java.util.ResourceBundle;
 

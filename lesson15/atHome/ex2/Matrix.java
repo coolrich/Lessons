@@ -11,6 +11,17 @@ public class Matrix<T extends Number> {
         numOfColumns = twoDimMatrix[0].length;
     }
 
+    public static void main(String[] args) {
+        Matrix<Float> m = new Matrix(new Float[][]{{1f, 1f}, {1f, 1f}});
+        m.printMatrix();
+        m.matrixMultiplication(new Matrix(new Integer[][]{{1, 1}, {1, 1}}));
+        m.printMatrix();
+        m.multiplyByTheNumber((float) 5);
+        m.printMatrix();
+        m.addOfMatrix(m);
+        m.printMatrix();
+    }
+
     private Number getNumber(T[][] matrix, Number n) {
         if (matrix instanceof Integer[][]) {
             return n.intValue();
@@ -57,7 +68,6 @@ public class Matrix<T extends Number> {
 
     }
 
-
     public void multiplyByTheNumber(Number number) {
         for (int i = 0; i < numOfRows; i++) {
             for (int j = 0; j < numOfColumns; j++) {
@@ -92,16 +102,5 @@ public class Matrix<T extends Number> {
             System.out.println();
         }
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        Matrix<Float> m = new Matrix(new Float[][]{{1f, 1f}, {1f, 1f}});
-        m.printMatrix();
-        m.matrixMultiplication(new Matrix(new Integer[][]{{1, 1}, {1, 1}}));
-        m.printMatrix();
-        m.multiplyByTheNumber((float) 5);
-        m.printMatrix();
-        m.addOfMatrix(m);
-        m.printMatrix();
     }
 }

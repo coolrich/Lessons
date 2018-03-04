@@ -8,11 +8,11 @@ package lesson8.exercise4;
  * Также подсчитать количество проданных цветов (используем статическую переменную).
  */
 public abstract class Flower {
+    private static int cntrOfAllFlwrs = 0;
+    private static int costOfAllFlwrs = 0;
     private String manufacturerCountry;
     private int shelfLife;
     private int cost;
-    private static int cntrOfAllFlwrs = 0;
-    private static int costOfAllFlwrs = 0;
 
     public Flower(String manufacturerCountry, int shelfLife, int cost) {
         this.manufacturerCountry = manufacturerCountry;
@@ -29,37 +29,6 @@ public abstract class Flower {
     public static int getCostOfAllFlwrs() {
         return costOfAllFlwrs;
     }
-
-    public abstract String printInfo();
-
-    public void printPriceOfFlowers() {
-        System.out.println(costOfAllFlwrs);
-    }
-
-    public void setManufacturerCountry(String manufacturerCountry) {
-        this.manufacturerCountry = manufacturerCountry;
-    }
-
-    public void setShelfLife(int shelfLife) {
-        this.shelfLife = shelfLife > 0 ? shelfLife : 0;
-    }
-
-    public void setCost(int cost) {
-        this.cost = cost > 0 ? cost : 0;
-    }
-
-    public String getManufacturerCountry() {
-        return manufacturerCountry;
-    }
-
-    public int getShelfLife() {
-        return shelfLife;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
 
     public static void initRandomFlowers(Flower[][] flowers) {
         for (int i = 0; i < flowers.length; i++) {
@@ -98,5 +67,35 @@ public abstract class Flower {
         Flower[][] flowers = new Flower[3][4];
         initRandomFlowers(flowers);
         printFlowers(flowers);
+    }
+
+    public abstract String printInfo();
+
+    public void printPriceOfFlowers() {
+        System.out.println(costOfAllFlwrs);
+    }
+
+    public String getManufacturerCountry() {
+        return manufacturerCountry;
+    }
+
+    public void setManufacturerCountry(String manufacturerCountry) {
+        this.manufacturerCountry = manufacturerCountry;
+    }
+
+    public int getShelfLife() {
+        return shelfLife;
+    }
+
+    public void setShelfLife(int shelfLife) {
+        this.shelfLife = shelfLife > 0 ? shelfLife : 0;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost > 0 ? cost : 0;
     }
 }

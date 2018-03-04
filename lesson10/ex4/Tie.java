@@ -8,6 +8,6 @@ public class Tie extends Clothing implements Men {
     @Override
     public void clotheAMan() {
         System.out.println("Wear a T-shirt for a man. Characteristics this men ");
-        System.out.println(getClothingCost()+" "+getClothingSize()+" "+getColor());
+        System.out.println(getClothingCost() + " " + getClothingSize() + " " + getColor());
     }
 }

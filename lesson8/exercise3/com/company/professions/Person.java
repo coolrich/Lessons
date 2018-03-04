@@ -1,9 +1,9 @@
 package lesson8.exercise3.com.company.professions;
 
 public class Person {
+    int age;
     private String firstName;
     private String lastName;
-    int age;
 
     public Person() {
     }
@@ -12,6 +12,11 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+    }
+
+    public static void main(String[] args) {
+        new Person().move();
+        new Person("Someone1", "Someone1", 30).talk();
     }
 
     public String getFirstName() {
@@ -44,10 +49,5 @@ public class Person {
 
     public void talk() {
         System.out.println(getFirstName() + " " + getLastName() + " is talking");
-    }
-
-    public static void main(String[] args) {
-        new Person().move();
-        new Person("Someone1", "Someone1", 30).talk();
     }
 }

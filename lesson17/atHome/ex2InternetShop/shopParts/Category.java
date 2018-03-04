@@ -42,6 +42,10 @@ public class Category {
         return products;
     }
 
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
     private int numOfProducts(Product p) {
         return Collections.frequency(listOfProducts, p);
     }
@@ -57,10 +61,6 @@ public class Category {
             }
         }
         return null;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
     }
 
     public void addProduct(String name, double price, int rating) {

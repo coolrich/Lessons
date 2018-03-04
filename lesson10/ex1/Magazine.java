@@ -9,6 +9,14 @@ public class Magazine implements Printable {
         this.name = name;
     }
 
+    public static void printMagazines(Printable[] printable) {
+        for (Printable p : printable) {
+            if (p instanceof Magazine) {
+                p.print();
+            }
+        }
+    }
+
     @Override
     public void print() {
         System.out.println("Name of magazine " + name);
@@ -42,13 +50,5 @@ public class Magazine implements Printable {
         return "Magazine{" +
                 "name='" + name + '\'' +
                 '}';
-    }
-
-    public static void printMagazines(Printable[] printable) {
-        for (Printable p : printable) {
-            if (p instanceof Magazine) {
-                p.print();
-            }
-        }
     }
 }

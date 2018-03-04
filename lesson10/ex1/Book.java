@@ -9,6 +9,14 @@ public class Book implements Printable {
         this.name = name;
     }
 
+    public static void printBooks(Printable[] printable) {
+        for (Printable p : printable) {
+            if (p instanceof Book) {
+                p.print();
+            }
+        }
+    }
+
     @Override
     public void print() {
         System.out.println("Name of book is " + name);
@@ -28,7 +36,6 @@ public class Book implements Printable {
         return Objects.hash(getName());
     }
 
-
     public String getName() {
         return name;
     }
@@ -42,13 +49,5 @@ public class Book implements Printable {
         return "Book{" +
                 "name='" + name + '\'' +
                 '}';
-    }
-
-    public static void printBooks(Printable[] printable) {
-        for (Printable p : printable) {
-            if (p instanceof Book) {
-                p.print();
-            }
-        }
     }
 }

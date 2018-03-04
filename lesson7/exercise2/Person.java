@@ -1,8 +1,8 @@
 package lesson7.exercise2;
 
 public class Person {
-    private String fullName;
     int age;
+    private String fullName;
 
     public Person() {
 
@@ -13,16 +13,16 @@ public class Person {
         age = anAge;
     }
 
+    public static void main(String[] args) {
+        new Person().move();
+        new Person("Someone", 30).talk();
+    }
+
     public void move() {
         System.out.println(fullName + " is moving");
     }
 
     public void talk() {
         System.out.println((fullName + " is talking"));
-    }
-
-    public static void main(String[] args) {
-        new Person().move();
-        new Person("Someone", 30).talk();
     }
 }

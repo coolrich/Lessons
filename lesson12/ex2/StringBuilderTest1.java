@@ -23,24 +23,12 @@ public class StringBuilderTest1 {
         mathExpression.append(number1).append(sign).append(number2).append("=").append(number1 + number2);
     }
 
-    enum Signs {
-        PLUS("+"), MINUS("-"), MULT("*"), DIV("/");
-
-        private String sign;
-
-        public String getSign() {
-            return sign;
-        }
-
-        @Override
-        public String toString() {
-            return sign;
-        }
-
-        Signs(String s) {
-            sign = s;
-        }
-
+    public static void main(String[] args) {
+        StringBuilderTest1 sbt;
+        System.out.println((sbt = new StringBuilderTest1(1, 1, Signs.PLUS)).getMathExpression());
+        System.out.println(sbt.replaceSB("=", " equals "));
+        System.out.println(sbt.replaceSB(" equals ", "="));
+        System.out.println(sbt.replaceInsertDelete("=", " equals "));
     }
 
     public StringBuilder getMathExpression() {
@@ -79,11 +67,23 @@ public class StringBuilderTest1 {
         return String.valueOf(mathExpression);
     }
 
-    public static void main(String[] args) {
-        StringBuilderTest1 sbt;
-        System.out.println((sbt = new StringBuilderTest1(1, 1, Signs.PLUS)).getMathExpression());
-        System.out.println(sbt.replaceSB("=", " equals "));
-        System.out.println(sbt.replaceSB(" equals ", "="));
-        System.out.println(sbt.replaceInsertDelete("=", " equals "));
+    enum Signs {
+        PLUS("+"), MINUS("-"), MULT("*"), DIV("/");
+
+        private String sign;
+
+        Signs(String s) {
+            sign = s;
+        }
+
+        public String getSign() {
+            return sign;
+        }
+
+        @Override
+        public String toString() {
+            return sign;
+        }
+
     }
 }

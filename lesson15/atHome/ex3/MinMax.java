@@ -12,6 +12,11 @@ public class MinMax<T extends Number> {
         this.elements = elements;
     }
 
+    public static void main(String[] args) {
+        MinMax<Number> numberFinder = new MinMax<>(new Number[]{5, 4, 6, 7, 3, 2.8, 8});
+        System.out.println("Min: " + numberFinder.findMin() + "\nMax: " + numberFinder.findMax());
+    }
+
     public T findMin() {
         List<T> els = new ArrayList<>(Arrays.asList(elements));
         els.sort(new Comparator<T>() {
@@ -34,10 +39,5 @@ public class MinMax<T extends Number> {
             }
         });
         return els.get(0);
-    }
-
-    public static void main(String[] args) {
-        MinMax<Number> numberFinder = new MinMax<>(new Number[]{5, 4, 6, 7, 3, 2.8, 8});
-        System.out.println("Min: " + numberFinder.findMin() + "\nMax: " + numberFinder.findMax());
     }
 }

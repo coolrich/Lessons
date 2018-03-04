@@ -20,6 +20,58 @@ public class Librarian {
         this.books = books;
     }
 
+    /**
+     * Вспомогательный метод для проверки
+     * на целое число
+     */
+    private static int checkForInt(Scanner sc) {
+        while (!sc.hasNextInt()) {
+            System.out.println("Write the integer, please!");
+        }
+        return sc.nextInt();
+
+    }
+
+    public static void main(String[] args) {
+        Librarian l = new Librarian(new Book[]{new Book("adventures of sherlock holmes and doctor watson", "arthur conan doyle", 325), new Book("adventures of sherlock holmes", "arthur conan doyle", 400), new Book("adventures of doctor watson", "arthur conan doyle", 300)});
+        Scanner sc = new Scanner(System.in);
+        boolean isContinue = true;
+
+        while (isContinue) {
+            System.out.println("Select item\n" +
+                    "1. Add a new user\n" +
+                    "2. Show users\n" +
+                    "3. User management\n" +
+                    "4. Exit\n" +
+                    "Write your choice, please(1-3):");
+            switch (sc.nextLine()) {
+                case "1":
+                    boolean b = true;
+                    while (b) {
+                        l.addUser(sc);
+                        System.out.println("Do you want to add a user?(y/n)");
+                        if (!sc.nextLine().equals("y")) {
+                            b = false;
+                        }
+                    }
+                    break;
+                case "2":
+                    l.showUsers();
+                    break;
+                case "3":
+                    System.out.println("Write the number of ticket");
+                    l.toManageUsers(checkForInt(sc), sc);
+                    break;
+                case "4":
+                    isContinue = false;
+                    break;
+                default:
+                    System.out.println("You did not select anything");
+                    break;
+            }
+        }
+    }
+
     public User[] getUsers() {
         return users;
     }
@@ -121,18 +173,6 @@ public class Librarian {
     }
 
     /**
-     * Вспомогательный метод для проверки
-     * на целое число
-     */
-    private static int checkForInt(Scanner sc) {
-        while (!sc.hasNextInt()) {
-            System.out.println("Write the integer, please!");
-        }
-        return sc.nextInt();
-
-    }
-
-    /**
      * Вспомогательный метод ищущий книгу в библиотеке
      * по объекту Book
      *
@@ -181,45 +221,5 @@ public class Librarian {
      */
     public Book getBook(Book book) {
         return findBook(book);
-    }
-
-    public static void main(String[] args) {
-        Librarian l = new Librarian(new Book[]{new Book("adventures of sherlock holmes and doctor watson", "arthur conan doyle", 325), new Book("adventures of sherlock holmes", "arthur conan doyle", 400), new Book("adventures of doctor watson", "arthur conan doyle", 300)});
-        Scanner sc = new Scanner(System.in);
-        boolean isContinue = true;
-
-        while (isContinue) {
-            System.out.println("Select item\n" +
-                    "1. Add a new user\n" +
-                    "2. Show users\n" +
-                    "3. User management\n" +
-                    "4. Exit\n" +
-                    "Write your choice, please(1-3):");
-            switch (sc.nextLine()) {
-                case "1":
-                    boolean b = true;
-                    while (b) {
-                        l.addUser(sc);
-                        System.out.println("Do you want to add a user?(y/n)");
-                        if (!sc.nextLine().equals("y")) {
-                            b = false;
-                        }
-                    }
-                    break;
-                case "2":
-                    l.showUsers();
-                    break;
-                case "3":
-                    System.out.println("Write the number of ticket");
-                    l.toManageUsers(checkForInt(sc), sc);
-                    break;
-                case "4":
-                    isContinue = false;
-                    break;
-                default:
-                    System.out.println("You did not select anything");
-                    break;
-            }
-        }
     }
 }

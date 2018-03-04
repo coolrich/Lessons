@@ -7,15 +7,20 @@ public class User {
     private String login;
     private String password;
 
-    public class Query {
-        public void printToLog() {
-            System.out.printf("The user %s with psswd %s sent query%n", login, password);
-        }
-    }
-
     public User(String login, String password) {
         this.login = login;
         this.password = password;
+    }
+
+    public static void main(String[] args) {
+        User user = new User("Login", "pswd");
+        user.createQuery();
+
+        User.Query query = user.new Query();
+        query.printToLog();
+
+        User.Query query1 = new User("A", "B").new Query();
+        query1.printToLog();
     }
 
     public String getLogin() {
@@ -65,14 +70,9 @@ public class User {
                 '}';
     }
 
-    public static void main(String[] args) {
-        User user = new User("Login", "pswd");
-        user.createQuery();
-
-        User.Query query = user.new Query();
-        query.printToLog();
-
-        User.Query query1 = new User("A", "B").new Query();
-        query1.printToLog();
+    public class Query {
+        public void printToLog() {
+            System.out.printf("The user %s with psswd %s sent query%n", login, password);
+        }
     }
 }

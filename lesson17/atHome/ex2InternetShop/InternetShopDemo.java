@@ -38,7 +38,7 @@ public class InternetShopDemo {
                         init = new Init(s).invoke();
                         lgn = init.getLgn();
                         psswd = init.getPsswd();
-                        b = !InternetShop.authorization(is, lgn, psswd);
+                        b = !is.authorization(is, lgn, psswd);
                         System.out.print(b ? "Try again\n" : "");
                     } while (b);
                     System.out.println("Done");

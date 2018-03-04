@@ -13,7 +13,8 @@ public class IfElseOperator {
             check(n);
         }
     }
-    public static void check(int n){
+
+    public static void check(int n) {
         if (n < 10 && n > 0) {
             System.out.println("число в пределах");
         } else {

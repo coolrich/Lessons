@@ -11,28 +11,12 @@ package lesson12.ex7;
  * знака после запятой и можете добавить что-нибудь свое.
  */
 public class Employee {
+    private static Employee[] employees;
     private String fullname;
     private double salary;
-    private static Employee[] employees;
 
     public Employee(String fullname, double salary) {
         this.fullname = fullname;
-        this.salary = salary;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
         this.salary = salary;
     }
 
@@ -50,5 +34,21 @@ public class Employee {
             employees[i] = new Employee(names[i], (int) (Math.random() * 1000));
         }
         return employees;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }

@@ -8,10 +8,10 @@ public class NewRunnable implements Runnable {
     public void run() {
         System.out.println(Thread.currentThread().getName());
         for (int i = 0; i < 101; i++) {
-            System.out.print(i % 10 == 0 ? i + " "+Thread.currentThread() +" \n" : "");
+            System.out.print(i % 10 == 0 ? i + " " + Thread.currentThread() + " \n" : "");
             try {
                 Thread.sleep(100);
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
             }
         }

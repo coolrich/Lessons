@@ -1,6 +1,5 @@
 package lesson5.exercise12;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class CreateCharArray {

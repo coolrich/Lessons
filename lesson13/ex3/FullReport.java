@@ -1,7 +1,5 @@
 package lesson13.ex3;
 
-import lesson12.ex7.Employee;
-
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -10,6 +8,17 @@ import java.util.ResourceBundle;
 
 
 public class FullReport {
+
+    public static void main(String[] args) {
+        try {
+            System.out.println("RU:");
+            new FullReport().generateReport(ModifiedEmployee.createEmployees("Adam", "Carl", "John"), new Locale("ru", "RU"));
+            System.out.println("US:");
+            new FullReport().generateReport(ModifiedEmployee.createEmployees("Adam", "Carl", "John"), new Locale("en", "US"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void generateReport(ModifiedEmployee[] employees, Locale l) throws UnsupportedEncodingException {
         int i = 0;
@@ -28,17 +37,6 @@ public class FullReport {
                         .getBytes("ISO-8859-1"), "windows-1251"));
         for (ModifiedEmployee e : employees) {
             System.out.printf("%d%7s%15s%12s\n", ++i, e.getFullname(), nf.format(e.getSalary()), dateFormat.format(e.getSalaryDate()));
-        }
-    }
-
-    public static void main(String[] args) {
-        try {
-            System.out.println("RU:");
-            new FullReport().generateReport(ModifiedEmployee.createEmployees("Adam", "Carl", "John"), new Locale("ru", "RU"));
-            System.out.println("US:");
-            new FullReport().generateReport(ModifiedEmployee.createEmployees("Adam", "Carl", "John"), new Locale("en", "US"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         }
     }
 }

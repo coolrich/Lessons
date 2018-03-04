@@ -1,8 +1,8 @@
 package lesson12.ex6;
 
-public class Person implements Comparable<Person>{
-    private String fullName;
+public class Person implements Comparable<Person> {
     int age;
+    private String fullName;
 
     public Person() {
 
@@ -11,6 +11,10 @@ public class Person implements Comparable<Person>{
     public Person(String aFullName, int anAge) {
         fullName = aFullName;
         age = anAge;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Person("I", 19));
     }
 
     public String getFullName() {
@@ -42,12 +46,8 @@ public class Person implements Comparable<Person>{
         return String.format("Person fullName = %s, age = %d", fullName, age);
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Person("I", 19));
-    }
-
     @Override
     public int compareTo(Person o) {
-        return this.age-o.age;
+        return this.age - o.age;
     }
 }

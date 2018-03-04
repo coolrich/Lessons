@@ -8,12 +8,12 @@ public class TShirt extends Clothing implements Men, Women {
     @Override
     public void clotheAMan() {
         System.out.println("Wear a T-shirt for a man. Characteristics this men ");
-        System.out.println(getClothingCost()+" "+getClothingSize()+" "+getColor());
+        System.out.println(getClothingCost() + " " + getClothingSize() + " " + getColor());
     }
 
     @Override
     public void clotheAWoman() {
         System.out.println("Wear a T-shirt for a woman. Characteristics about this clothe:");
-        System.out.println(getClothingCost()+" "+getClothingSize()+" "+getColor());
+        System.out.println(getClothingCost() + " " + getClothingSize() + " " + getColor());
     }
 }

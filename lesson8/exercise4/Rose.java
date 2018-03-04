@@ -1,8 +1,8 @@
 package lesson8.exercise4;
 
 public class Rose extends Flower {
-    private boolean thorns;
     private static int cntr = 0;
+    private boolean thorns;
 
     public Rose(String manufacturerCountry, int shelfLife, int price, boolean thorns) {
         super(manufacturerCountry, shelfLife, price);

@@ -11,6 +11,17 @@ public class Matrix {
         numOfColumns = twoDimMatrix[0].length;
     }
 
+    public static void main(String[] args) {
+        Matrix m = new Matrix(new float[][]{{1, 1}, {1, 1}});
+        m.printMatrix();
+        m.matrixMultiplication(new Matrix(new float[][]{{1, 1}, {1, 1}}));
+        m.printMatrix();
+        m.multiplyByTheNumber(5);
+        m.printMatrix();
+        m.addOfMatrix(m);
+        m.printMatrix();
+    }
+
     public float getElement(int x, int y) {
         return twoDimMatrix[x][y];
     }
@@ -72,16 +83,5 @@ public class Matrix {
             System.out.println();
         }
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        Matrix m = new Matrix(new float[][]{{1, 1}, {1, 1}});
-        m.printMatrix();
-        m.matrixMultiplication(new Matrix(new float[][]{{1, 1}, {1, 1}}));
-        m.printMatrix();
-        m.multiplyByTheNumber(5);
-        m.printMatrix();
-        m.addOfMatrix(m);
-        m.printMatrix();
     }
 }

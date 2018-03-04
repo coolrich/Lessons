@@ -1,10 +1,6 @@
 package lesson13.ex6;
 
 public class Food {
-    public void prepare(Cookable c) {
-        c.cook();
-    }
-
     public static void main(String[] args) {
         new Food().prepare(new Cookable() {
             @Override
@@ -12,5 +8,9 @@ public class Food {
                 System.out.println("Cooking)");
             }
         });
+    }
+
+    public void prepare(Cookable c) {
+        c.cook();
     }
 }

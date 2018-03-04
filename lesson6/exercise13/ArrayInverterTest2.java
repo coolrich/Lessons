@@ -1,7 +1,5 @@
 package lesson6.exercise13;
 
-import lesson6.exercise13.ArrayInverter;
-
 import java.util.Arrays;
 
 public class ArrayInverterTest2 {

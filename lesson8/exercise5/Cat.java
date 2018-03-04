@@ -1,6 +1,6 @@
 package lesson8.exercise5;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
 
     public Cat(String food, String location) {
         super(food, location);

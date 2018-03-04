@@ -1,12 +1,10 @@
 package lesson7.exercise4;
 
-import java.util.Objects;
-
 public class User {
+    private static int numOfTickets = 0;
     private String firstName;
     private String lastName;
     private String patronymic;
-    private static int numOfTickets = 0;
     private int numOfReadTicket;
     private String dateOfBirth;
     private String phoneNumber;

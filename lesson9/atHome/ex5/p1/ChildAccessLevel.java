@@ -1,7 +1,5 @@
 package lesson9.atHome.ex5.p1;
 
-import lesson9.atHome.ex5.p1.AccessLevel;
-
 public class ChildAccessLevel extends AccessLevel {
     public static void main(String[] args) {
 

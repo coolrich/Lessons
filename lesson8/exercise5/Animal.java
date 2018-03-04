@@ -12,13 +12,21 @@ import java.io.Serializable;
  * В методе main создайте массив типа Animal, в который запишите животных всех имеющихся у вас типов.
  * В цикле отправляйте их на прием к ветеринару.
  */
-public abstract class Animal implements Serializable{
+public abstract class Animal implements Serializable {
     private String food;
     private String location;
 
     public Animal(String food, String location) {
         this.food = food;
         this.location = location;
+    }
+
+    public static void main(String[] args) {
+        Animal[] animals = {new Cat("Cat food", "l1"), new Dog("Dog food", "l2"), new Horse("Horse food", "l3")};
+        Veterinarian veterinarian = new Veterinarian();
+        for (Animal a : animals) {
+            veterinarian.treatAnimal(a);
+        }
     }
 
     public abstract void makeNoise();
@@ -43,13 +51,5 @@ public abstract class Animal implements Serializable{
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public static void main(String[] args) {
-        Animal[] animals = {new Cat("Cat food", "l1"), new Dog("Dog food", "l2"), new Horse("Horse food", "l3")};
-        Veterinarian veterinarian = new Veterinarian();
-        for (Animal a : animals) {
-            veterinarian.treatAnimal(a);
-        }
     }
 }

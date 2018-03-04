@@ -1,7 +1,5 @@
 package lesson12.ex2;
 
-import java.util.Scanner;
-
 public class StringBuilderTest {
     public static void main(String[] args) {
         startTest();

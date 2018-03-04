@@ -1,7 +1,5 @@
 package lesson9.atLesson.ex1;
 
-import lesson9.atLesson.ex1.Shape;
-
 /**
  * Created by Student on 17.01.2018.
  */
@@ -27,16 +25,16 @@ public class Circle extends Shape {
         return y;
     }
 
+    public void setY(int y) {
+        this.y = y;
+    }
+
     @Override
     public String toString() {
         return "Circle{" +
                 "x=" + x +
                 ", y=" + y +
                 "} " + super.toString();
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     @Override

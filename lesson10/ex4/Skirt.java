@@ -8,6 +8,6 @@ public class Skirt extends Clothing implements Women {
     @Override
     public void clotheAWoman() {
         System.out.println("Wear a T-shirt for a woman. Characteristics about this clothe:");
-        System.out.println(getClothingCost()+" "+getClothingSize()+" "+getColor());
+        System.out.println(getClothingCost() + " " + getClothingSize() + " " + getColor());
     }
 }

@@ -7,6 +7,17 @@ public class User1 {
     private String login;
     private String password;
 
+    public User1(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    public static void main(String[] args) {
+        User1 user = new User1("Login", "pswd");
+        user.createQuery("Address");
+
+    }
+
     public void createQuery(String name) {
         class Query {
             public void printToLog() {
@@ -14,11 +25,6 @@ public class User1 {
             }
         }
         new Query().printToLog();
-    }
-
-    public User1(String login, String password) {
-        this.login = login;
-        this.password = password;
     }
 
     public String getLogin() {
@@ -62,12 +68,6 @@ public class User1 {
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        User1 user = new User1("Login", "pswd");
-        user.createQuery("Address");
-
     }
 }
 

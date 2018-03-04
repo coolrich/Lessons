@@ -5,21 +5,21 @@ import lesson17.atHome.ex2InternetShop.shopParts.Category;
 import lesson17.atHome.ex2InternetShop.shopParts.Product;
 import lesson17.atHome.ex2InternetShop.usersData.User;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class InternetShop {
-    private User user;
+    private static List<User> users;
+    private User currentUser;
     private Map<String, Category> categoryMap;
 
     public InternetShop() {
-        user = new User();
         categoryMap = new HashMap<>();
+        users = new ArrayList<>();
     }
 
     public InternetShop(User users) {
-        this.user = users;
+        this();
+        this.users.add(users);
     }
 
     public static boolean registration(InternetShop is, String name, String password) {
@@ -32,20 +32,22 @@ public class InternetShop {
         return true;
     }
 
-    public static boolean authorization(InternetShop is, String login, String password) {
-        if (login != null && password != null && is.findUser(login, password)) {
+    public boolean authorization(InternetShop is, String login, String password) {
+        if (login != null && password != null && is.findUser(login, password) != null) {
+            currentUser = new User(login, password);
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean findUser(String name, String pswd) {
-        return user.findUser(name, pswd);
-    }
-
-    public void addUser(String name, String pswd) throws WrongInputException {
-        user.addUser(name, pswd);
+    public User findUser(String name, String psswd) {
+        for (User u : users) {
+            if (u.getName().equals(name) && u.getPsswd().equals(psswd)) {
+                return u;
+            }
+        }
+        return null;
     }
 
     public void addCategory(String categoryName) {
@@ -66,7 +68,7 @@ public class InternetShop {
     }
 
     public void showUserBasket() {
-        user.showBasket();
+        findUser(currentUser.getName(), currentUser.getPsswd());
     }
 
     public boolean selectCategory(String categoryName) {
@@ -95,13 +97,27 @@ public class InternetShop {
         Product p = null;
         boolean b;
         if (categoryMap.get(categoryName) != null) {
-            user.getBasket().addProductToProductsList(p = getProduct(categoryName, name));
+            currentUser.getBasket().addProductToProductsList(p = getProduct(categoryName, name));
             b = true;
         } else {
             System.out.println("There is no " + name);
             b = false;
         }
         return b;
+    }
+
+    public void addUser(String login, String password) throws WrongInputException {
+        if (login.length() < 3 && password.length() < 7) {
+            throw new WrongInputException("Wrong login and password.\nLogin needs 3 or more characters\nand password needs 7 or more characters");
+        }
+        if (login.length() < 3) {
+            throw new WrongInputException("Wrong login, it needs 3 or more characters");
+        }
+        if (password.length() < 7) {
+            throw new WrongInputException("Wrong password, it needs 7 or more characters");
+        }
+        currentUser.setName(login);
+        currentUser.setPsswd(password);
     }
 
     private Product getProduct(String categoryName, String name) {
@@ -137,18 +153,18 @@ public class InternetShop {
     }
 
     public void buyAll() {
-        if(user.getCash()>=user.getTotalCost()){
-            user.getBasket().buyAllProducts();
-        }else{
+        if (currentUser.getCash() >= currentUser.getTotalCost()) {
+            currentUser.getBasket().buyAllProducts();
+        } else {
             System.out.println("You don't have enough money!");
         }
     }
 
     public void buyProduct(String name) {
-        user.getBasket().buyProduct(name);
+        currentUser.getBasket().buyProduct(name);
     }
 
     public void showBoughtProductsList() {
-        user.getBasket().showBoughtProductsList();
+        currentUser.getBasket().showBoughtProductsList();
     }
 }

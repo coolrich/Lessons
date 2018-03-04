@@ -1,13 +1,12 @@
 package lesson9.atLesson.ex1;
 
-import lesson9.atLesson.ex1.Shape;
-
 /**
  * Created by Student on 17.01.2018.
  */
 public class Rectangle extends Shape {
     private int x0, x1;
     private int y0;
+    private int y1;
 
     public Rectangle(String c, int x0, int x1, int y0, int y1) {
         super(c);
@@ -48,8 +47,6 @@ public class Rectangle extends Shape {
     public void setY1(int y1) {
         this.y1 = y1;
     }
-
-    private int y1;
 
     public void draw() {
         System.out.println("Drawing rectangle");

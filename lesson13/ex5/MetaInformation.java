@@ -11,14 +11,14 @@ public class MetaInformation {
         System.out.println(someClass.isArray());
         System.out.println(someClass.isInterface());
         System.out.println(someClass.isPrimitive());
-        System.out.println(Arrays.deepToString(someClass.getDeclaredClasses())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getDeclaredMethods())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getDeclaredConstructors())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getDeclaredFields())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getClasses())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getConstructors())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getMethods())+"\n\n\n");
-        System.out.println(Arrays.deepToString(someClass.getFields())+"\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getDeclaredClasses()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getDeclaredMethods()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getDeclaredConstructors()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getDeclaredFields()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getClasses()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getConstructors()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getMethods()) + "\n\n\n");
+        System.out.println(Arrays.deepToString(someClass.getFields()) + "\n\n\n");
     }
 
     public static void main(String[] args) {

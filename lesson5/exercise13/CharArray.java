@@ -11,7 +11,7 @@ public class CharArray {
     }
 
     public static void output() {
-        char[][] ch ={{'1','2'},{'3','4'},{'5','6'},{'3','4'}};
+        char[][] ch = {{'1', '2'}, {'3', '4'}, {'5', '6'}, {'3', '4'}};
         System.out.println(Arrays.deepToString(ch));
     }
 }

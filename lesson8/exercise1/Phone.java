@@ -1,10 +1,10 @@
 package lesson8.exercise1;
 
 public class Phone {
+    private static int count = 0;
     private String number;
     private String model;
     private float weight;
-    private static int count = 0;
 
     public Phone() {
         count++;
@@ -21,28 +21,32 @@ public class Phone {
         count++;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setWeight(float weight) {
-        this.weight = weight;
+    public static int getCount() {
+        return count;
     }
 
     public String getModel() {
         return model;
     }
 
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     public float getWeight() {
         return weight;
     }
 
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
     public String getNumber() {
         return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public void sendMessage(String... phoneNumbers) {
@@ -58,10 +62,6 @@ public class Phone {
 
     public void receiveCall(String callerName, String callerNumber) {
         System.out.println(callerName + " is calling\n" + callerNumber);
-    }
-
-    public static int getCount() {
-        return count;
     }
 
     @Override

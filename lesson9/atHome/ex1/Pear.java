@@ -1,11 +1,11 @@
 package lesson9.atHome.ex1;
 
 public class Pear extends Fruit {
+    private static int cstOfAllPrs = 0;
+    private static int pearCntr = 0;
     private String pearColor;
     private String variety;
     private int pearCost;
-    private static int cstOfAllPrs = 0;
-    private static int pearCntr = 0;
 
     public Pear(int weight, String pearColor, String variety, int pearCost) {
         super(weight, pearCost);
@@ -14,21 +14,6 @@ public class Pear extends Fruit {
         this.pearCost = pearCost;
         pearCntr++;
         cstOfAllPrs += pearCost;
-    }
-
-    @Override
-    public int getCostOfFrts() {
-        return cstOfAllPrs;
-    }
-
-    @Override
-    public int getCost() {
-        return getWeight() * pearCost;
-    }
-
-    @Override
-    public String getFrstName() {
-        return "Pears";
     }
 
     public static int getCstOfAllPrs() {
@@ -47,12 +32,27 @@ public class Pear extends Fruit {
         Pear.pearCntr = pearCntr;
     }
 
-    public void setPearColor(String pearColor) {
-        this.pearColor = pearColor;
+    @Override
+    public int getCostOfFrts() {
+        return cstOfAllPrs;
+    }
+
+    @Override
+    public int getCost() {
+        return getWeight() * pearCost;
+    }
+
+    @Override
+    public String getFrstName() {
+        return "Pears";
     }
 
     public String getPearColor() {
         return pearColor;
+    }
+
+    public void setPearColor(String pearColor) {
+        this.pearColor = pearColor;
     }
 
     public void setPearolor(String pearColor) {

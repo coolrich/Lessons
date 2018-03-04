@@ -35,6 +35,7 @@ class CelebrateBox extends Box {
     }
 
 }
+
 class UsuallBox extends Box {
 
     public UsuallBox(Wrapple w) {

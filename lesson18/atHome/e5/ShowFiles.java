@@ -14,7 +14,7 @@ public class ShowFiles {
                 } else {
                     System.out.println("\nFolder: " + "\n" + itemName + ":");
                 }
-                String fullPathName=anItemName + "\\" + itemName;
+                String fullPathName = anItemName + "\\" + itemName;
                 show(fullPathName);
             }
         }

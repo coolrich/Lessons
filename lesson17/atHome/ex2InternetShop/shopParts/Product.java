@@ -4,10 +4,10 @@ package lesson17.atHome.ex2InternetShop.shopParts;
  * Created by student on 11.02.2018.
  */
 public class Product implements Comparable<Product> {
+    private static int counter = 0;
     private String name;
     private double price;
     private int rating;
-    private static int counter = 0;
 
     public Product(String name, double price, int rating) {
         this.name = name;

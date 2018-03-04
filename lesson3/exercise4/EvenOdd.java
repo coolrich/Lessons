@@ -8,7 +8,7 @@ public class EvenOdd {
         Scanner sc = new Scanner(System.in);
         int n;
         String s;
-        
+
         while (sc.hasNextInt()) {
             if ((sc.nextInt() & 1) == 0) {
                 System.out.println("even");

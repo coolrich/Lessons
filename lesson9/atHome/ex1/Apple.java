@@ -1,13 +1,11 @@
 package lesson9.atHome.ex1;
 
-import lesson9.atHome.ex1.Fruit;
-
 public class Apple extends Fruit {
+    private static int cstOfAllApps = 0;
+    private static int appleCntr = 0;
     private String appleColor;
     private String variety;
     private int appleCost;
-    private static int cstOfAllApps = 0;
-    private static int appleCntr = 0;
 
     public Apple(int weight, String appleColor, String variety, int appleCost) {
         super(weight, appleCost);
@@ -16,6 +14,10 @@ public class Apple extends Fruit {
         this.appleCost = appleCost;
         appleCntr++;
         cstOfAllApps += appleCost;
+    }
+
+    public static int getAppleCntr() {
+        return appleCntr;
     }
 
     @Override
@@ -31,10 +33,6 @@ public class Apple extends Fruit {
     @Override
     public String getFrstName() {
         return "Apples";
-    }
-
-    public static int getAppleCntr() {
-        return appleCntr;
     }
 
     public String getAppleColor() {

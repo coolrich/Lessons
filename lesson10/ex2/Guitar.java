@@ -1,8 +1,6 @@
 package lesson10.ex2;
 
 public class Guitar implements Instrument {
-    enum NumberOfStrings {SIX, SEVEN}
-
     private NumberOfStrings numberOfStrings = NumberOfStrings.valueOf("SIX");
 
     public Guitar(String numberOfStrings) {
@@ -17,4 +15,6 @@ public class Guitar implements Instrument {
     public void play() {
         System.out.println("The guitar plays key " + KEY + ". It has " + numberOfStrings.name() + " strings.");
     }
+
+    enum NumberOfStrings {SIX, SEVEN}
 }

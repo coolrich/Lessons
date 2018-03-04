@@ -17,17 +17,17 @@ public class Car {
         color = aColor;
     }
 
+    public static void main(String[] args) {
+        new Car().getWeight();
+        new Car().getColor();
+    }
+
     public int getWeight() {
         return weight;
     }
 
     public String getColor() {
         return color;
-    }
-
-    public static void main(String[] args) {
-        new Car().getWeight();
-        new Car().getColor();
     }
 
 }
