@@ -30,10 +30,10 @@ public class Basket {
         boughtProductsList.forEach(System.out::print);
     }
 
-    public void buyProduct(int id) {
+    public void buyProduct(String name) {
         for (int i = 0; i < productList.size(); i++) {
             Product thisProduct = productList.get(i);
-            if (thisProduct.getId() == id) {
+            if (thisProduct.getName() == name) {
                 boughtProductsList.add(thisProduct);
                 productList.remove(thisProduct);
             }

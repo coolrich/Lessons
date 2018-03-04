@@ -22,6 +22,24 @@ public class InternetShop {
         this.user = users;
     }
 
+    public static boolean registration(InternetShop is, String name, String password) {
+        try {
+            is.addUser(name, password);
+        } catch (WrongInputException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean authorization(InternetShop is, String login, String password) {
+        if (login != null && password != null && is.findUser(login, password)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean findUser(String name, String pswd) {
         return user.findUser(name, pswd);
     }
@@ -73,21 +91,21 @@ public class InternetShop {
 
     }
 
-    public boolean selectAndGetProductToBasket(String categoryName, int productId) {
+    public boolean selectAndGetProductToBasket(String categoryName, String name) {
         Product p = null;
         boolean b;
         if (categoryMap.get(categoryName) != null) {
-            user.getBasket().addProductToProductsList(p = getProduct(categoryName, productId));
+            user.getBasket().addProductToProductsList(p = getProduct(categoryName, name));
             b = true;
         } else {
-            System.out.println("There is no " + productId);
+            System.out.println("There is no " + name);
             b = false;
         }
         return b;
     }
 
-    private Product getProduct(String categoryName, int productId) {
-        return categoryMap.get(categoryName).getProduct(productId);
+    private Product getProduct(String categoryName, String name) {
+        return categoryMap.get(categoryName).getProduct(name);
     }
 
     private Collection<Category> getCategory() {
@@ -126,8 +144,8 @@ public class InternetShop {
         }
     }
 
-    public void buyProduct(int id) {
-        user.getBasket().buyProduct(id);
+    public void buyProduct(String name) {
+        user.getBasket().buyProduct(name);
     }
 
     public void showBoughtProductsList() {

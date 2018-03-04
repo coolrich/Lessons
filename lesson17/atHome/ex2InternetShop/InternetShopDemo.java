@@ -5,23 +5,6 @@ import lesson17.atHome.ex2InternetShop.errorProcessing.WrongInputException;
 import java.util.Scanner;
 
 public class InternetShopDemo {
-    public static boolean authorization(InternetShop is, String login, String password) {
-        if (login != null && password != null && is.findUser(login, password)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static boolean registration(InternetShop is, String name, String password) {
-        try {
-            is.addUser(name, password);
-        } catch (WrongInputException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-        return true;
-    }
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -32,7 +15,11 @@ public class InternetShopDemo {
         Init init;
         boolean isContinue = true;
         while (isContinue) {
-            String choice = getChoice(s);
+            System.out.println("Please, enter the number:");
+            System.out.println("1. Sign in");
+            System.out.println("2. Log in");
+            System.out.println("3. Exit");
+            String choice = s.nextLine();
             switch (choice) {
                 case "1":
                     do {
@@ -40,7 +27,7 @@ public class InternetShopDemo {
                         lgn = init.getLgn();
                         psswd = init.getPsswd();
                         System.out.println("Try again");
-                    } while (!registration(is, lgn, psswd));
+                    } while (!InternetShop.registration(is, lgn, psswd));
 
                     System.out.println("Done");
 
@@ -51,7 +38,7 @@ public class InternetShopDemo {
                         init = new Init(s).invoke();
                         lgn = init.getLgn();
                         psswd = init.getPsswd();
-                        b = !authorization(is, lgn, psswd);
+                        b = !InternetShop.authorization(is, lgn, psswd);
                         System.out.print(b ? "Try again\n" : "");
                     } while (b);
                     System.out.println("Done");
@@ -61,10 +48,51 @@ public class InternetShopDemo {
                         System.out.println("2. My basket");
                         System.out.println("3. Log out");
                         System.out.println("4. Show bought products");
+                        System.out.println("5. Sorting of products");
                         System.out.print("number:");
                         choice = s.nextLine();
                         switch (choice) {
                             case "1":
+                                System.out.println("Categories of products:");
+                                is.showCategoriesList();
+                                System.out.println("Enter the name of category:");
+                                String categoryName;
+                                do {
+                                    categoryName = s.nextLine();
+                                    System.out.println("Choose category(name):");
+                                } while (!is.selectCategory(categoryName));
+                                String productName;
+                                do {
+                                    System.out.println("Choose product(name):");
+                                    productName = s.nextLine();
+                                } while (!is.selectAndGetProductToBasket(categoryName, productName));
+                                break;
+                            case "2":
+                                is.showUserBasket();
+                                System.out.println("1. Buy all products");
+                                System.out.println("2. Buy product");
+                                System.out.println("3. Back");
+                                choice = s.nextLine();
+                                switch (choice) {
+                                    case "1":
+                                        is.buyAll();
+                                        break;
+                                    case "2":
+                                        System.out.println("Product's id:");
+                                        is.buyProduct(s.nextLine());
+                                        break;
+                                    case "3":
+                                        break;
+                                }
+                                break;
+                            case "3":
+                                isContinue = false;
+                                break;
+                            case "4":
+                                is.showBoughtProductsList();
+                                s.nextLine();
+                                break;
+                            case "5":
                                 System.out.println("How do you want to sort products?");
                                 System.out.println("1. Sort by price");
                                 System.out.println("2. Sort by name");
@@ -95,46 +123,6 @@ public class InternetShopDemo {
                                         is.reverseSortByRating();
                                         break;
                                 }
-
-
-                                System.out.println("Categories of products:");
-                                is.showCategoriesList();
-                                System.out.println("Enter the name of category:");
-                                String categoryName;
-                                do {
-                                    categoryName = s.nextLine();
-                                    System.out.println("Choose category(name):");
-                                } while (!is.selectCategory(categoryName));
-                                int productId;
-                                do {
-                                    System.out.println("Choose product(id):");
-                                    productId = Integer.parseInt(s.nextLine());
-                                } while (!is.selectAndGetProductToBasket(categoryName, productId));
-                                break;
-                            case "2":
-                                is.showUserBasket();
-                                System.out.println("1. Buy all products");
-                                System.out.println("2. Buy product");
-                                System.out.println("3. Back");
-                                choice = s.nextLine();
-                                switch (choice) {
-                                    case "1":
-                                        is.buyAll();
-                                        break;
-                                    case "2":
-                                        System.out.println("Product's id:");
-                                        is.buyProduct(Integer.parseInt(s.nextLine()));
-                                        break;
-                                    case "3":
-                                        break;
-                                }
-                                break;
-                            case "3":
-                                isContinue = false;
-                                break;
-                            case "4":
-                                is.showBoughtProductsList();
-                                s.nextLine();
                                 break;
                         }
                     }
@@ -163,17 +151,6 @@ public class InternetShopDemo {
         is.addProducts("Cloths", "Dress", 1001.2, 4);
         is.addProducts("Cloths", "Anorak", 1001.25, 5);
         is.addProducts("Cloths", "T-Shirt", 1212.5, 5);
-    }
-
-    public static String getChoice(Scanner s) {
-        String choice;
-        System.out.println("Please, enter the number:");
-        System.out.println("1. Sign in");
-        System.out.println("2. Log in");
-        System.out.println("3. Exit");
-        String lgn, psswd;
-        choice = s.nextLine();
-        return choice;
     }
 
     private static class Init {

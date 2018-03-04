@@ -50,11 +50,9 @@ public class Category {
         return numOfProducts(p) > 0;
     }
 
-    public Product getProduct(int id) {
+    public Product getProduct(String name) {
         for (Product p : products) {
-            if (p.getId()==id && isContains(p)) {
-                int newId= p.getId()+1;
-                p.setId(newId);
+            if (p.getName().equals(name) && isContains(p)) {
                 return p;
             }
         }

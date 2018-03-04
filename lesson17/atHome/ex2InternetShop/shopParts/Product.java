@@ -8,10 +8,8 @@ public class Product implements Comparable<Product> {
     private double price;
     private int rating;
     private static int counter = 0;
-    private int id;
 
     public Product(String name, double price, int rating) {
-        id=counter++;
         this.name = name;
         this.price = price;
         this.rating = rating;
@@ -70,7 +68,6 @@ public class Product implements Comparable<Product> {
         return "Product: " + name +
                 " Price: " + price +
                 " Rating:" + rating +
-                " Id: " + id +
                 "\n";
     }
 
@@ -83,11 +80,4 @@ public class Product implements Comparable<Product> {
         }
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }
