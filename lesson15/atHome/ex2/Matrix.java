@@ -11,33 +11,6 @@ public class Matrix<T extends Number> {
         numOfColumns = twoDimMatrix[0].length;
     }
 
-    public static void main(String[] args) {
-        Matrix<Float> m = new Matrix(new Float[][]{{1f, 1f}, {1f, 1f}});
-        m.printMatrix();
-        m.matrixMultiplication(new Matrix(new Integer[][]{{1, 1}, {1, 1}}));
-        m.printMatrix();
-        m.multiplyByTheNumber((float) 5);
-        m.printMatrix();
-        m.addOfMatrix(m);
-        m.printMatrix();
-    }
-
-    private Number getNumber(T[][] matrix, Number n) {
-        if (matrix instanceof Integer[][]) {
-            return n.intValue();
-        } else if (matrix instanceof Double[][]) {
-            return n.doubleValue();
-        } else if (matrix instanceof Float[][]) {
-            return n.floatValue();
-        } else if (matrix instanceof Short[][]) {
-            return n.shortValue();
-        } else if (matrix instanceof Long[][]) {
-            return n.longValue();
-        } else {
-            return n.byteValue();
-        }
-    }
-
     public T getElement(int x, int y) {
         return twoDimMatrix[x][y];
     }
@@ -58,8 +31,8 @@ public class Matrix<T extends Number> {
         if (numOfRows == anotherMatrix.getRows() && numOfColumns == anotherMatrix.getColumns()) {
             for (int i = 0; i < numOfRows; i++) {
                 for (int j = 0; j < twoDimMatrix[0].length; j++) {
-                    Number n = (T) ((Number) (twoDimMatrix[i][j].doubleValue() + anotherMatrix.getElement(i, j).doubleValue()));
-                    twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix, n);
+                    Number n = twoDimMatrix[i][j].doubleValue() + anotherMatrix.getElement(i, j).doubleValue();
+                    twoDimMatrix[i][j] = (T) n;
                 }
             }
         } else {
@@ -71,8 +44,8 @@ public class Matrix<T extends Number> {
     public void multiplyByTheNumber(Number number) {
         for (int i = 0; i < numOfRows; i++) {
             for (int j = 0; j < numOfColumns; j++) {
-                Number n = (T) ((Number) (twoDimMatrix[i][j].doubleValue() * number.doubleValue()));
-                twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix, n);
+                Number n = twoDimMatrix[i][j].doubleValue() * number.doubleValue();
+                twoDimMatrix[i][j] = (T) n;
             }
         }
     }
@@ -83,10 +56,10 @@ public class Matrix<T extends Number> {
                 for (int j = 0; j < twoDimMatrix[0].length; j++) {
                     Number temp = 0;
                     for (int k = 0; k < anotherMatrix.numOfRows; k++) {
-                        temp = (T) ((Number) (temp.doubleValue() + twoDimMatrix[i][j].doubleValue() * anotherMatrix.getElement(k, i).doubleValue()));
+                        temp = temp.doubleValue() + twoDimMatrix[i][j].doubleValue() * anotherMatrix.getElement(k, i).doubleValue();
                     }
 
-                    twoDimMatrix[i][j] = (T) getNumber(twoDimMatrix, temp);
+                    twoDimMatrix[i][j] = (T) temp;
                 }
             }
         } else {
@@ -102,5 +75,16 @@ public class Matrix<T extends Number> {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Matrix<Float> m = new Matrix<>(new Float[][]{{1f, 1f}, {1f, 1f}});
+        m.printMatrix();
+        m.matrixMultiplication(new Matrix<>(new Integer[][]{{1, 1}, {1, 1}}));
+        m.printMatrix();
+        m.multiplyByTheNumber((float) 5);
+        m.printMatrix();
+        m.addOfMatrix(m);
+        m.printMatrix();
     }
 }
