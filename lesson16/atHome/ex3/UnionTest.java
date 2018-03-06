@@ -11,10 +11,10 @@ import java.util.Set;
  * работу этих методов на предварительно заполненных множествах.
  */
 public class UnionTest {
-    public static <T> void union(Set<? extends T>... set) {
+    public static <T> void union(Set<?>... set) {
         Set<T> union = new HashSet<>();
         for (Set<?> t : set) {
-            union.addAll((Collection<? extends T>) t);
+            union.addAll((Collection<T>) t);
         }
         System.out.print("Union of sets: ");
         for (T t : union) {
@@ -23,10 +23,10 @@ public class UnionTest {
     }
 
     public static <T> void intersect(Set<?>... set) {
-        Set<T> intersect = new HashSet<>((Collection<? extends T>) Arrays.asList(set[0]));
+        Set<T> intersect = new HashSet<>((Collection<T>)set[0]);
 
         for (Set<?> t : set) {
-            set[0].retainAll(t);
+            intersect.retainAll(t);
         }
         System.out.print("intersect of sets: ");
         for (Object t : set[0]) {

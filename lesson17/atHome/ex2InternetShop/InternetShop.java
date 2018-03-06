@@ -15,11 +15,12 @@ public class InternetShop {
     public InternetShop() {
         categoryMap = new HashMap<>();
         users = new ArrayList<>();
+        currentUser = new User();
     }
 
-    public InternetShop(User users) {
+    public InternetShop(User user) {
         this();
-        this.users.add(users);
+        this.users.add(user);
     }
 
     public static boolean registration(InternetShop is, String name, String password) {
@@ -32,9 +33,10 @@ public class InternetShop {
         return true;
     }
 
-    public boolean authorization(InternetShop is, String login, String password) {
-        if (login != null && password != null && is.findUser(login, password) != null) {
-            currentUser = new User(login, password);
+    public boolean authorization(String login, String password) {
+        if (login != null && password != null && findUser(login, password) != null) {
+            currentUser.setName(login);
+            currentUser.setPsswd(password);
             return true;
         } else {
             return false;
@@ -68,7 +70,7 @@ public class InternetShop {
     }
 
     public void showUserBasket() {
-        findUser(currentUser.getName(), currentUser.getPsswd());
+        currentUser.showBasket();
     }
 
     public boolean selectCategory(String categoryName) {
@@ -93,7 +95,7 @@ public class InternetShop {
 
     }
 
-    public boolean selectAndGetProductToBasket(String categoryName, String name) {
+    public boolean selectAndPutProductToBasket(String categoryName, String name) {
         Product p = null;
         boolean b;
         if (categoryMap.get(categoryName) != null) {
@@ -116,8 +118,7 @@ public class InternetShop {
         if (password.length() < 7) {
             throw new WrongInputException("Wrong password, it needs 7 or more characters");
         }
-        currentUser.setName(login);
-        currentUser.setPsswd(password);
+        users.add(new User(login, password));
     }
 
     private Product getProduct(String categoryName, String name) {

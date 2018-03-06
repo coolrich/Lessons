@@ -6,12 +6,15 @@ public class User {
     private Basket basket;
     private int cash;
 
-    public User(String name, String psswd) {
-        this.name = name;
-        this.psswd = psswd;
+    public User() {
         cash = 2000;
         this.basket = new Basket();
+    }
 
+    public User(String name, String psswd) {
+        this();
+        this.name = name;
+        this.psswd = psswd;
     }
 
     public Basket getBasket() {
@@ -22,13 +25,7 @@ public class User {
         this.basket = basket;
     }
 
-    /*public boolean findUser(String lgn, String psswd) {
-        if (userLoginPassword.keySet().contains(lgn) && userLoginPassword.values().contains(psswd)) {
-            return true;
-        } else {
-            return false;
-        }
-    }*/
+
 
     public void showBasket() {
         basket.showProductList();

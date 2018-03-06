@@ -38,7 +38,7 @@ public class InternetShopDemo {
                         init = new Init(s).invoke();
                         lgn = init.getLgn();
                         psswd = init.getPsswd();
-                        b = !is.authorization(is, lgn, psswd);
+                        b = !is.authorization(lgn, psswd);
                         System.out.print(b ? "Try again\n" : "");
                     } while (b);
                     System.out.println("Done");
@@ -65,7 +65,7 @@ public class InternetShopDemo {
                                 do {
                                     System.out.println("Choose product(name):");
                                     productName = s.nextLine();
-                                } while (!is.selectAndGetProductToBasket(categoryName, productName));
+                                } while (!is.selectAndPutProductToBasket(categoryName, productName));
                                 break;
                             case "2":
                                 is.showUserBasket();
@@ -141,7 +141,7 @@ public class InternetShopDemo {
 
     public static void init(InternetShop is) {
         try {
-            is.addUser("aaa", "aaaaaaa");
+            is.addUser("admin", "very complex");
         } catch (WrongInputException e) {
             e.printStackTrace();
         }
