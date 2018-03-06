@@ -23,7 +23,7 @@ public class UnionTest {
     }
 
     public static <T> void intersect(Set<?>... set) {
-        Set<T> intersect = new HashSet<>((Collection<T>)set[0]);
+        Set<T> intersect = new HashSet<>((Collection<T>) set[0]);
 
         for (Set<?> t : set) {
             intersect.retainAll(t);
