@@ -1,8 +1,8 @@
-package lesson20.atHome.e2.shopParts;
+package lesson19.atHome.e2.shopParts;
 
-import lesson20.atHome.e2.shopParts.comparators.ProductComparatorName;
-import lesson20.atHome.e2.shopParts.comparators.ProductComparatorPrice;
-import lesson20.atHome.e2.shopParts.comparators.ProductComparatorRating;
+import lesson19.atHome.e2.shopParts.comparators.ProductComparatorName;
+import lesson19.atHome.e2.shopParts.comparators.ProductComparatorPrice;
+import lesson19.atHome.e2.shopParts.comparators.ProductComparatorRating;
 
 import java.io.Serializable;
 import java.util.*;
