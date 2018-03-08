@@ -1,4 +1,4 @@
-package lesson19.atHome.e2.shopParts;
+package lesson20.atHome.e2.shopParts;
 
 import java.io.Serializable;
 

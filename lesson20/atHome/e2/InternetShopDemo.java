@@ -1,6 +1,6 @@
-package lesson19.atHome.e2;
+package lesson20.atHome.e2;
 
-import lesson19.atHome.e2.errorProcessing.WrongInputException;
+import lesson20.atHome.e2.errorProcessing.WrongInputException;
 
 import java.util.Scanner;
 

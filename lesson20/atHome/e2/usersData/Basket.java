@@ -1,6 +1,6 @@
-package lesson19.atHome.e2.usersData;
+package lesson20.atHome.e2.usersData;
 
-import lesson19.atHome.e2.shopParts.Product;
+import lesson20.atHome.e2.shopParts.Product;
 
 import java.io.Serializable;
 import java.util.ArrayList;

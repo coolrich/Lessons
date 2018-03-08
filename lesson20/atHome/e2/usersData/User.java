@@ -1,6 +1,6 @@
-package lesson19.atHome.e2.usersData;
+package lesson20.atHome.e2.usersData;
 
-import lesson19.atHome.e2.usersData.report.Report;
+import lesson20.atHome.e2.usersData.report.Report;
 
 import java.io.Serializable;
 

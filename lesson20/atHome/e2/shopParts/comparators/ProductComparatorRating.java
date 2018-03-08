@@ -1,6 +1,6 @@
-package lesson19.atHome.e2.shopParts.comparators;
+package lesson20.atHome.e2.shopParts.comparators;
 
-import lesson19.atHome.e2.shopParts.Product;
+import lesson20.atHome.e2.shopParts.Product;
 
 import java.util.Comparator;
 

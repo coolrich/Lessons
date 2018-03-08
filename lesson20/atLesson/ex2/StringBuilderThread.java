@@ -1,4 +1,4 @@
-package lesson19.atLesson.ex2;
+package lesson20.atLesson.ex2;
 
 /**
  * Created by Student on 28.02.2018.
