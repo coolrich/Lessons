@@ -1,6 +1,7 @@
 package lesson17.atHome.ex2InternetShop.shopParts;
 
 import java.util.ArrayList;
+
 /**
  * Coming soon
  */
