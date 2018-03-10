@@ -5,13 +5,36 @@ import java.util.Scanner;
 public class Philosopher implements Runnable {
     private static Philosopher[] philosophers = new Philosopher[5];
     private static int counter = 1;
+    private static Table table = new Table();
     private final int phlsphrsNmbr = counter++;
     private boolean isEating;
     private Fork left;
     private Fork right;
-    private static Table table = new Table();
 
     private Philosopher() {
+    }
+
+    public static void getStates() {
+        for (Philosopher p : philosophers) {
+            System.out.println(p.getState());
+        }
+    }
+
+    private static int getCounter() {
+        return counter;
+    }
+
+    public static Thread[] create5PhilosopherThreads() {
+        if (Philosopher.getCounter() <= 5) {
+            return new Thread[]{
+                    new Thread(philosophers[0] = new Philosopher(), philosophers[0].getPhlsphrsNmbr() + ""),
+                    new Thread(philosophers[1] = new Philosopher(), philosophers[1].getPhlsphrsNmbr() + ""),
+                    new Thread(philosophers[2] = new Philosopher(), philosophers[2].getPhlsphrsNmbr() + ""),
+                    new Thread(philosophers[3] = new Philosopher(), philosophers[3].getPhlsphrsNmbr() + ""),
+                    new Thread(philosophers[4] = new Philosopher(), philosophers[4].getPhlsphrsNmbr() + "")};
+        } else {
+            return null;
+        }
     }
 
     public int getPhlsphrsNmbr() {
@@ -56,36 +79,13 @@ public class Philosopher implements Runnable {
         }
     }
 
-    public static void getStates() {
-        for (Philosopher p : philosophers) {
-            System.out.println(p.getState());
-        }
-    }
-
     @Override
     public void run() {
         Scanner s = new Scanner(System.in);
         while (true) {
             action();
             System.out.println(getState());
-
-        }
-    }
-
-    private static int getCounter() {
-        return counter;
-    }
-
-    public static Thread[] create5PhilosopherThreads() {
-        if (Philosopher.getCounter() <= 5) {
-            return new Thread[]{
-                    new Thread(philosophers[0] = new Philosopher(), philosophers[0].getPhlsphrsNmbr() + ""),
-                    new Thread(philosophers[1] = new Philosopher(), philosophers[1].getPhlsphrsNmbr() + ""),
-                    new Thread(philosophers[2] = new Philosopher(), philosophers[2].getPhlsphrsNmbr() + ""),
-                    new Thread(philosophers[3] = new Philosopher(), philosophers[3].getPhlsphrsNmbr() + ""),
-                    new Thread(philosophers[4] = new Philosopher(), philosophers[4].getPhlsphrsNmbr() + "")};
-        } else {
-            return null;
+            s.nextLine();
         }
     }
 }

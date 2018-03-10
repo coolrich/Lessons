@@ -4,8 +4,13 @@ public class Fork {
     private static int forkId = 0;
     private final int id = ++forkId;
     private boolean onTable;
+
     public Fork() {
-        onTable=true;
+        onTable = true;
+    }
+
+    public static int getForkId() {
+        return forkId;
     }
 
     public static void setForkId(int forkId) {
@@ -18,10 +23,6 @@ public class Fork {
 
     public void setOnTable(boolean onTable) {
         this.onTable = onTable;
-    }
-
-    public static int getForkId() {
-        return forkId;
     }
 
     public int getId() {
